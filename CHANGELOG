@@ -1,0 +1,9 @@
+2021/1/20 创建库 by OscarXsb
+使用说明：
+	Rviz:
+		roslaunch libro_model display.launch
+	Gazebo:
+		roslaunch libro_model gazebo.launch
+2021/1/20 创建键盘控制程序 by john1217
+使用说明：
+	rosrun libro_model libro_teleop.py
