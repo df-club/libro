@@ -1,6 +1,9 @@
 <launch>
   <include
     file="$(find gazebo_ros)/launch/empty_world.launch" />
+  <param 
+    name="robot_description" 
+    command="$(find xacro)/xacro --inorder $(find libro_model)/urdf/libro_main.xacro" />
   <node
     name="tf_footprint_base"
     pkg="tf"
@@ -10,7 +13,7 @@
     name="spawn_model"
     pkg="gazebo_ros"
     type="spawn_model"
-    args="-file $(find libro_model)/urdf/libro_model.urdf -urdf -model libro_model"
+    args="-param robot_description -urdf -model libro_model"
     output="screen" />
   <node
     name="fake_joint_calibration"
