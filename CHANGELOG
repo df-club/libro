@@ -1,11 +1,19 @@
-2021/1/20 创建键盘控制程序 by john1217
-使用说明：
-	rosrun libro_model libro_teleop.py
+2021/1/21 增加gazebo环境中用键盘控制libro运动 by john1217
+版本说明：
+	1. 在urdf模型中的增加gazebo和controller标签，修复一些bug。
+	2. 新增了gazebo_contrller.yaml，用于配置controller的参数。
+	3. 新增libro_teleop.py，键盘控制程序。
+	4. 新增gazebo_teleop.launch，用于运行相关配置文件。
+使用方法：
+	1. roslaunch libro_model gazebo_teleop.launch
+	2. rosrun libro_model libro_teleop.py
+	3. 在运行libro_teleop.py的终端中按下相应按键进行控制。
+	
+/*************************************************************************/
 
 2021/1/20 创建库 by OscarXsb
-使用说明：
+说明：
 	Rviz:
 		roslaunch libro_model display.launch
 	Gazebo:
 		roslaunch libro_model gazebo.launch
-		

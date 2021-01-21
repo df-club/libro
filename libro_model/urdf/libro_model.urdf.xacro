@@ -2,279 +2,187 @@
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
      Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
-<robot
-  name="libro_model"
+<robot name="libro_model"
   xmlns:xacro="http://ros.org/wiki/xacro">
-  <link
-    name="base_link">
+  <link name="chassis_link">
     <inertial>
-      <origin
-        xyz="5.68208583529243E-05 -1.08190137895018E-05 -0.0191328128743083"
-        rpy="0 0 0" />
-      <mass
-        value="0.315959634168836" />
-      <inertia
-        ixx="0.000237187119369315"
-        ixy="1.02623528819012E-07"
-        ixz="-5.76554239644837E-20"
-        iyy="0.000984715228403803"
-        iyz="3.46081831405105E-20"
-        izz="0.00120943275258583" />
+      <origin xyz="5.68208583529243E-05 -1.08190137895018E-05 -0.0191328128743083" rpy="0 0 0" />
+      <mass value="0.315959634168836" />
+      <inertia ixx="0.000237187119369315" ixy="1.02623528819012E-07" ixz="-5.76554239644837E-20" iyy="0.000984715228403803" iyz="3.46081831405105E-20" izz="0.00120943275258583" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://libro_model/meshes/base_link.STL" />
+        <mesh filename="package://libro_model/meshes/base_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1" />
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://libro_model/meshes/base_link.STL" />
+        <mesh filename="package://libro_model/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
-  <link
-    name="right_front_wheel_link">
+  <link name="right_front_wheel_link">
     <inertial>
-      <origin
-        xyz="1.38777878078145E-17 0.000536215321318312 3.46944695195361E-18"
-        rpy="0 0 0" />
-      <mass
-        value="0.0420890500835263" />
-      <inertia
-        ixx="1.69788467809493E-05"
-        ixy="-1.07143056154772E-22"
-        ixz="3.59209508752315E-22"
-        iyy="2.82266239844783E-05"
-        iyz="2.23488333501653E-21"
-        izz="1.69803313609295E-05" />
+      <origin xyz="1.38777878078145E-17 0.000536215321318312 3.46944695195361E-18" rpy="0 0 0" />
+      <mass value="0.0420890500835263" />
+      <inertia ixx="1.69788467809493E-05" ixy="-1.07143056154772E-22" ixz="3.59209508752315E-22" iyy="2.82266239844783E-05" iyz="2.23488333501653E-21" izz="1.69803313609295E-05" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://libro_model/meshes/right_front_wheel_link.STL" />
+        <mesh filename="package://libro_model/meshes/right_front_wheel_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      <material name="">
+        <color rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://libro_model/meshes/right_front_wheel_link.STL" />
+        <mesh filename="package://libro_model/meshes/right_front_wheel_link.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="right_front_wheel_link"
-    type="continuous">
-    <origin
-      xyz="0.057307 -0.064491 -0.02175"
-      rpy="0 0 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="right_front_wheel_link" />
-    <axis
-      xyz="0 1 0" />
-    <limit
-      lower="-180"
-      upper="180"
-      effort="0"
-      velocity="0" />
+  <joint name="right_front_wheel_joint" type="continuous">
+    <origin xyz="0.057307 -0.064491 -0.02175" rpy="0 0 0" />
+    <parent link="chassis_link" />
+    <child link="right_front_wheel_link" />
+    <axis xyz="0 1 0" />
+    <!-- <limit lower="-180" upper="180" effort="0" velocity="0" /> -->
   </joint>
-  <link
-    name="right_rear_wheel_link">
+  <link name="right_rear_wheel_link">
     <inertial>
-      <origin
-        xyz="1.38777878078145E-17 0.000536215321318284 6.93889390390723E-18"
-        rpy="0 0 0" />
-      <mass
-        value="0.0420890500835264" />
-      <inertia
-        ixx="1.69788467809493E-05"
-        ixy="1.57919887602203E-21"
-        ixz="-3.34928854973574E-22"
-        iyy="2.82266239844783E-05"
-        iyz="3.29921671584904E-22"
-        izz="1.69803313609295E-05" />
+      <origin xyz="1.38777878078145E-17 0.000536215321318284 6.93889390390723E-18" rpy="0 0 0" />
+      <mass value="0.0420890500835264" />
+      <inertia ixx="1.69788467809493E-05" ixy="1.57919887602203E-21" ixz="-3.34928854973574E-22" iyy="2.82266239844783E-05" iyz="3.29921671584904E-22" izz="1.69803313609295E-05" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://libro_model/meshes/right_rear_wheel_link.STL" />
+        <mesh filename="package://libro_model/meshes/right_rear_wheel_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      <material name="">
+        <color rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://libro_model/meshes/right_rear_wheel_link.STL" />
+        <mesh filename="package://libro_model/meshes/right_rear_wheel_link.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="right_rear_wheel_joint"
-    type="continuous">
-    <origin
-      xyz="-0.057693 -0.064454 -0.02175"
-      rpy="0 0 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="right_rear_wheel_link" />
-    <axis
-      xyz="0 1 0" />
-    <limit
-      lower="-180"
-      upper="180"
-      effort="0"
-      velocity="0" />
+  <joint name="right_rear_wheel_joint" type="continuous">
+    <origin xyz="-0.057693 -0.064454 -0.02175" rpy="0 0 0" />
+    <parent link="chassis_link" />
+    <child link="right_rear_wheel_link" />
+    <axis xyz="0 1 0" />
+    <!-- <limit lower="-180" upper="180" effort="0" velocity="0" /> -->
   </joint>
-  <link
-    name="left_front_wheel_link">
+  <link name="left_front_wheel_link">
     <inertial>
-      <origin
-        xyz="-6.93889390390723E-18 -0.000536215321318298 0"
-        rpy="0 0 0" />
-      <mass
-        value="0.0420890500835263" />
-      <inertia
-        ixx="1.69788467809493E-05"
-        ixy="1.20055989289706E-21"
-        ixz="-3.34719610585716E-22"
-        iyy="2.82266239844783E-05"
-        iyz="-1.25731607683899E-21"
-        izz="1.69803313609295E-05" />
+      <origin xyz="-6.93889390390723E-18 -0.000536215321318298 0" rpy="0 0 0" />
+      <mass value="0.0420890500835263" />
+      <inertia ixx="1.69788467809493E-05" ixy="1.20055989289706E-21" ixz="-3.34719610585716E-22" iyy="2.82266239844783E-05" iyz="-1.25731607683899E-21" izz="1.69803313609295E-05" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://libro_model/meshes/left_front_wheel_link.STL" />
+        <mesh filename="package://libro_model/meshes/left_front_wheel_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      <material name="">
+        <color rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://libro_model/meshes/left_front_wheel_link.STL" />
+        <mesh filename="package://libro_model/meshes/left_front_wheel_link.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="left_front_wheel_joint"
-    type="continuous">
-    <origin
-      xyz="0.057307 0.064455 -0.02175"
-      rpy="0 0 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="left_front_wheel_link" />
-    <axis
-      xyz="0 1 0" />
-    <limit
-      lower="-180"
-      upper="180"
-      effort="0"
-      velocity="0" />
+  <joint name="left_front_wheel_joint" type="continuous">
+    <origin xyz="0.057307 0.064455 -0.02175" rpy="0 0 0" />
+    <parent link="chassis_link" />
+    <child link="left_front_wheel_link" />
+    <axis xyz="0 1 0" />
+    <!-- <limit lower="-180" upper="180" effort="0" velocity="0" /> -->
   </joint>
-  <link
-    name="left_rear_wheel_link">
+  <link name="left_rear_wheel_link">
     <inertial>
-      <origin
-        xyz="4.16333634234434E-17 -0.000536215321318353 -3.46944695195361E-16"
-        rpy="0 0 0" />
-      <mass
-        value="0.0420890500835263" />
-      <inertia
-        ixx="1.69788496293646E-05"
-        ixy="-1.18719665581258E-21"
-        ixz="6.49660441239981E-11"
-        iyy="2.82266239844783E-05"
-        iyz="1.01365580326182E-21"
-        izz="1.69803285125142E-05" />
+      <origin xyz="4.16333634234434E-17 -0.000536215321318353 -3.46944695195361E-16" rpy="0 0 0" />
+      <mass value="0.0420890500835263" />
+      <inertia ixx="1.69788496293646E-05" ixy="-1.18719665581258E-21" ixz="6.49660441239981E-11" iyy="2.82266239844783E-05" iyz="1.01365580326182E-21" izz="1.69803285125142E-05" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://libro_model/meshes/left_rear_wheel_link.STL" />
+        <mesh filename="package://libro_model/meshes/left_rear_wheel_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      <material name="">
+        <color rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://libro_model/meshes/left_rear_wheel_link.STL" />
+        <mesh filename="package://libro_model/meshes/left_rear_wheel_link.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="left_rear_wheel_joint"
-    type="continuous">
-    <origin
-      xyz="-0.057693 0.064369 -0.02175"
-      rpy="0 0 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="left_rear_wheel_link" />
-    <axis
-      xyz="0 1 0" />
-    <limit
-      lower="-180"
-      upper="180"
-      effort="0"
-      velocity="0" />
+  <joint name="left_rear_wheel_joint" type="continuous">
+    <origin xyz="-0.057693 0.064369 -0.02175" rpy="0 0 0" />
+    <parent link="chassis_link" />
+    <child link="left_rear_wheel_link" />
+    <axis xyz="0 1 0" />
+    <!-- <limit lower="-180" upper="180" effort="0" velocity="0" /> -->
   </joint>
+
+
+  <!-- Add transmission to each wheel joint -->
+  <macro name="wheel_trans" params="prefix_name">
+    <transmission name="${prefix_name}_wheel_transmission">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix_name}_wheel_joint">
+        <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix_name}_wheel_motor">
+        <mechanicalReducction>1</mechanicalReducction>
+      </actuator>
+    </transmission>
+
+    <gazebo reference="${prefix_name}_wheel_link">
+      <material>Gazebo/Black</material>
+    </gazebo>
+  </macro>
+
+  <wheel_trans prefix_name="left_front" />
+  <wheel_trans prefix_name="right_front" />
+  <wheel_trans prefix_name="left_rear" />
+  <wheel_trans prefix_name="right_rear" />
+
+  <!-- base_link -->
+  <link name="base_link"/>
+  <joint name="base_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="base_link"/>
+    <child link="chassis_link"/>
+  </joint>
+
+  <gazebo reference="chassis_link">
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+
+  <!-- Add gazebo ros control tag -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
 </robot>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>  
   
-<robot name="libro_model"    
+<robot name="libro_main"    
     xmlns:xi="http://www.w3.org/2001/XInclude"  
     xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz"  
     xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model"  
