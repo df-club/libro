@@ -1,3 +1,15 @@
+2021/1/21 测试gazebo环境中world空间的搭建 by john1217
+版本说明：
+	1. 新增worlds文件夹用于保存gazebo的world空间模型文件
+	2. 新增gazebo_world.launch，用于加载world文件。
+	3. 修改gazebo_teleop.launch文件中的gazebo参数，使其指向新增的gazebo_teleop.launch。
+使用方法：
+	1. roslaunch libro_model gazebo_teleop.launch
+	2. rosrun libro_model libro_teleop.py
+	3. 在运行libro_teleop.py的终端中按下相应按键进行控制。
+
+/*************************************************************************/
+
 2021/1/21 优化了urdf文件夹的目录结构 by OscarXsb
 优化内容：
 	1.增加gazebo_conf.xacro文件
