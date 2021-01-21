@@ -4,7 +4,7 @@
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot name="libro_model"
   xmlns:xacro="http://ros.org/wiki/xacro">
-  <link name="chassis_link">
+  <link name="libro_chassis_link">
     <inertial>
       <origin xyz="5.68208583529243E-05 -1.08190137895018E-05 -0.0191328128743083" rpy="0 0 0" />
       <mass value="0.315959634168836" />
@@ -50,7 +50,7 @@
   </link>
   <joint name="right_front_wheel_joint" type="continuous">
     <origin xyz="0.057307 -0.064491 -0.02175" rpy="0 0 0" />
-    <parent link="chassis_link" />
+    <parent link="libro_chassis_link" />
     <child link="right_front_wheel_link" />
     <axis xyz="0 1 0" />
     <!-- <limit lower="-180" upper="180" effort="0" velocity="0" /> -->
@@ -79,7 +79,7 @@
   </link>
   <joint name="right_rear_wheel_joint" type="continuous">
     <origin xyz="-0.057693 -0.064454 -0.02175" rpy="0 0 0" />
-    <parent link="chassis_link" />
+    <parent link="libro_chassis_link" />
     <child link="right_rear_wheel_link" />
     <axis xyz="0 1 0" />
     <!-- <limit lower="-180" upper="180" effort="0" velocity="0" /> -->
@@ -108,7 +108,7 @@
   </link>
   <joint name="left_front_wheel_joint" type="continuous">
     <origin xyz="0.057307 0.064455 -0.02175" rpy="0 0 0" />
-    <parent link="chassis_link" />
+    <parent link="libro_chassis_link" />
     <child link="left_front_wheel_link" />
     <axis xyz="0 1 0" />
     <!-- <limit lower="-180" upper="180" effort="0" velocity="0" /> -->
@@ -137,7 +137,7 @@
   </link>
   <joint name="left_rear_wheel_joint" type="continuous">
     <origin xyz="-0.057693 0.064369 -0.02175" rpy="0 0 0" />
-    <parent link="chassis_link" />
+    <parent link="libro_chassis_link" />
     <child link="left_rear_wheel_link" />
     <axis xyz="0 1 0" />
     <!-- <limit lower="-180" upper="180" effort="0" velocity="0" /> -->
@@ -155,10 +155,6 @@
         <mechanicalReducction>1</mechanicalReducction>
       </actuator>
     </transmission>
-
-    <gazebo reference="${prefix_name}_wheel_link">
-      <material>Gazebo/Black</material>
-    </gazebo>
   </macro>
 
   <wheel_trans prefix_name="left_front" />
@@ -171,18 +167,8 @@
   <joint name="base_joint" type="fixed">
     <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
     <parent link="base_link"/>
-    <child link="chassis_link"/>
+    <child link="libro_chassis_link"/>
   </joint>
 
-  <gazebo reference="chassis_link">
-    <material>Gazebo/Yellow</material>
-  </gazebo>
 
-  <!-- Add gazebo ros control tag -->
-  <gazebo>
-    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>/</robotNamespace>
-      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
-    </plugin>
-  </gazebo>
 </robot>

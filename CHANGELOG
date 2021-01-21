@@ -1,3 +1,11 @@
+2021/1/21 优化了urdf文件夹的目录结构 by OscarXsb
+优化内容：
+	1.增加gazebo_conf.xacro文件
+	2.更名chassis_link -> libro_chassis_link
+	3.更改主板颜色为白色
+
+/*************************************************************************/
+
 2021/1/21 增加gazebo环境中用键盘控制libro运动 by john1217
 版本说明：
 	1. 在urdf模型中的增加gazebo和controller标签，修复一些bug。
