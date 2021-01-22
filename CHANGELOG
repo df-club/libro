@@ -1,8 +1,17 @@
+2021/1/22 添加了gazebo中library.world仿真环境 by OscarXsb
+版本说明：
+	1.新增libro_library.world文件
+	2.创建了library.dae模型文件
+*使用方法同上次更新
+**注意：libro_library.world文件中的dae模型文件路径需改为自己的绝对路径**
+
+/*************************************************************************/
+
 2021/1/21 测试gazebo环境中world空间的搭建 by john1217
 版本说明：
 	1. 新增worlds文件夹用于保存gazebo的world空间模型文件
 	2. 新增gazebo_world.launch，用于加载world文件。
-	3. 修改gazebo_teleop.launch文件中的gazebo参数，使其指向新增的gazebo_teleop.launch。
+	3. 修改gazebo_teleop.launch文件中的gazebo参数，使其指向新增的gazebo_world.launch。
 使用方法：
 	1. roslaunch libro_model gazebo_teleop.launch
 	2. rosrun libro_model libro_teleop.py

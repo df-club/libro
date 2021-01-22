@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <world name="default">
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <model name="library">
+      <pose>0 0 -1 0 -0 0</pose>
+      <static>true</static>
+      <link name="libro_scene">
+
+      <inertial>
+        <mass>15</mass>
+        <inertia>
+          <ixx>0.0</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>file:///home/ros/libro_ws/src/libro_model/worlds/library.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>file:///home/ros/libro_ws/src/libro_model/worlds/library.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      </link>
+    </model>
+  </world>
+</sdf>
