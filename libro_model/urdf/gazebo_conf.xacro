@@ -1,5 +1,23 @@
 <?xml version="1.0"?>
 <robot>
+  <!-- Add transmission to each wheel joint -->
+  <macro name="wheel_trans" params="prefix_name">
+    <transmission name="${prefix_name}_wheel_transmission">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix_name}_wheel_joint">
+        <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix_name}_wheel_motor">
+        <mechanicalReducction>1</mechanicalReducction>
+      </actuator>
+    </transmission>
+  </macro>
+
+  <wheel_trans prefix_name="left_front" />
+  <wheel_trans prefix_name="right_front" />
+  <wheel_trans prefix_name="left_rear" />
+  <wheel_trans prefix_name="right_rear" />
+
   <!-- Add Gazebo meterials tag -->
   <gazebo reference="libro_chassis_link">
     <material>Gazebo/White</material>
@@ -15,6 +33,9 @@
  </gazebo>
  <gazebo reference="right_rear_wheel_link">
       <material>Gazebo/FlatBlack</material>
+ </gazebo>
+ <gazebo reference="ydlidar_link">
+      <material> Gazebo/Grey </material>
  </gazebo>
 
   <!-- Add Gazebo ros control tag -->

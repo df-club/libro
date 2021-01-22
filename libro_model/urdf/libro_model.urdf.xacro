@@ -142,25 +142,59 @@
     <axis xyz="0 1 0" />
     <!-- <limit lower="-180" upper="180" effort="0" velocity="0" /> -->
   </joint>
-
-
-  <!-- Add transmission to each wheel joint -->
-  <macro name="wheel_trans" params="prefix_name">
-    <transmission name="${prefix_name}_wheel_transmission">
-      <type>transmission_interface/SimpleTransmission</type>
-      <joint name="${prefix_name}_wheel_joint">
-        <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
-      </joint>
-      <actuator name="${prefix_name}_wheel_motor">
-        <mechanicalReducction>1</mechanicalReducction>
-      </actuator>
-    </transmission>
-  </macro>
-
-  <wheel_trans prefix_name="left_front" />
-  <wheel_trans prefix_name="right_front" />
-  <wheel_trans prefix_name="left_rear" />
-  <wheel_trans prefix_name="right_rear" />
+    <link
+    name="ydlidar_link">
+    <inertial>
+      <origin
+        xyz="0.080408 0.0011599 0.020124"
+        rpy="0 0 0" />
+      <mass
+        value="0.05739" />
+      <inertia
+        ixx="1.3925E-05"
+        ixy="9.9078E-07"
+        ixz="-1.1243E-06"
+        iyy="3.4503E-05"
+        iyz="-1.2775E-07"
+        izz="4.723E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://libro_model/meshes/ydlidar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77255 0.75294 0.73333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://libro_model/meshes/ydlidar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ydlidar_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="libro_chassis_link" />
+    <child
+      link="ydlidar_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
 
   <!-- base_link -->
   <link name="base_link"/>
