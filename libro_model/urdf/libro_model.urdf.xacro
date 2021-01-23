@@ -142,21 +142,21 @@
     <axis xyz="0 1 0" />
     <!-- <limit lower="-180" upper="180" effort="0" velocity="0" /> -->
   </joint>
-    <link
+  <link
     name="ydlidar_link">
     <inertial>
       <origin
-        xyz="0.080408 0.0011599 0.020124"
+        xyz="0.0231720323566563 0.00112954738407898 -0.045776403536883"
         rpy="0 0 0" />
       <mass
-        value="0.05739" />
+        value="0.0573896608078332" />
       <inertia
-        ixx="1.3925E-05"
-        ixy="9.9078E-07"
-        ixz="-1.1243E-06"
-        iyy="3.4503E-05"
-        iyz="-1.2775E-07"
-        izz="4.723E-05" />
+        ixx="1.39246903875836E-05"
+        ixy="9.90784550405998E-07"
+        ixz="-1.12428911988727E-06"
+        iyy="3.45029950880899E-05"
+        iyz="-1.27754764540977E-07"
+        izz="4.72303912642056E-05" />
     </inertial>
     <visual>
       <origin
@@ -169,7 +169,7 @@
       <material
         name="">
         <color
-          rgba="0.77255 0.75294 0.73333 1" />
+          rgba="0.772549019607843 0.752941176470588 0.733333333333333 1" />
       </material>
     </visual>
     <collision>
@@ -186,12 +186,65 @@
     name="ydlidar_joint"
     type="fixed">
     <origin
-      xyz="0 0 0"
+      xyz="0.056136 -0.00016187 0.0859"
       rpy="0 0 0" />
     <parent
       link="libro_chassis_link" />
     <child
       link="ydlidar_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="lidar_underframe_link">
+    <inertial>
+      <origin
+        xyz="0.0713736461903973 -9.66678635817838E-05 0.01"
+        rpy="0 0 0" />
+      <mass
+        value="0.119982831853072" />
+      <inertia
+        ixx="3.99842050248324E-05"
+        ixy="8.82530750051684E-21"
+        ixz="-7.14343913461121E-22"
+        iyy="0.000103956889382291"
+        iyz="5.54441914502247E-22"
+        izz="0.000135942238950252" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://libro_model/meshes/lidar_underframe_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://libro_model/meshes/lidar_underframe_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_underframe_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="libro_chassis_link" />
+    <child
+      link="lidar_underframe_link" />
     <axis
       xyz="0 0 0" />
   </joint>
