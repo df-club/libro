@@ -1,0 +1,33 @@
+<launch>
+    <arg name="model" default="$(find libro_model)/urdf/libro_main.xacro"/>
+    <arg name="rviz_config" default="$(find urdf_tutorial)/rviz/urdf.rviz"/>
+    <arg name="use_gui" default="true"/>
+
+    <!-- rosparam -->
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)"/>
+    <!-- joint state publisher -->
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+    <!-- gazebo -->
+    <include file="$(find libro_model)/launch/gazebo_world.launch">
+    </include>
+
+    <!-- spawn model -->
+    <node name="robot_gazebo_spawner" pkg="gazebo_ros" type="spawn_model" args="-urdf -model rbo -param robot_description">
+    </node>
+
+    <!-- load controller yaml -->
+    <rosparam command="load" file="$(find libro_model)/config/gazebo_controller.yaml"/>
+    <!-- controller manager -->
+    <node name="controller_manager" pkg="controller_manager" type="spawner" ns="/"
+        args="joint_state_controller mobile_base_controller"/>
+
+    <!-- rviz -->
+    <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_config)" /> -->
+
+    <!-- libro_model keyboard teleop control -->
+    <!-- <node name="libro_teleop_publisher" pkg="libro_model" type="libro_teleop.py" /> -->
+
+</launch>

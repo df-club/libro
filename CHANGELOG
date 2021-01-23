@@ -1,9 +1,12 @@
-2021/1/20 创建库 by OscarXsb
-使用说明：
-	Rviz:
-		roslaunch libro_model display.launch
-	Gazebo:
-		roslaunch libro_model gazebo.launch
-2021/1/20 创建键盘控制程序 by john1217
-使用说明：
-	rosrun libro_model libro_teleop.py
+2021/1/23 完成libro机器人建模及环境配置
+版本号：V0.1
+贡献者：OscarXsb，john1217
+版本说明：
+	1.完成ROS和Gazebo的安装及环境配置
+	2.构建libro机器人模型
+	3.构建明珠图书馆简易仿真环境
+	4.实现键盘控制libro运动
+使用方法：
+	1.roslaunch libro_model gazebo_teleop.launch
+	2.rosrun libro_model libro_teleop.py
+	3.在运行libro_teleop.py的终端中按下相应按键进行控制
