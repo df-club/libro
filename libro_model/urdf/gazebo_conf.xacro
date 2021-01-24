@@ -23,20 +23,20 @@
     <material>Gazebo/White</material>
   </gazebo>
   <gazebo reference="left_front_wheel_link">
-      <material>Gazebo/FlatBlack</material>
- </gazebo>
- <gazebo reference="right_front_wheel_link">
-      <material>Gazebo/FlatBlack</material>
- </gazebo>
- <gazebo reference="left_rear_wheel_link">
-      <material>Gazebo/FlatBlack</material>
- </gazebo>
- <gazebo reference="right_rear_wheel_link">
-      <material>Gazebo/FlatBlack</material>
- </gazebo>
- <gazebo reference="ydlidar_link">
-      <material> Gazebo/Grey </material>
- </gazebo>
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+  <gazebo reference="right_front_wheel_link">
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+  <gazebo reference="left_rear_wheel_link">
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+  <gazebo reference="right_rear_wheel_link">
+    <material>Gazebo/FlatBlack</material>
+  </gazebo>
+  <gazebo reference="ydlidar_link">
+    <material> Gazebo/Grey </material>
+  </gazebo>
 
   <!-- Add Gazebo ros control tag -->
   <gazebo>
@@ -55,20 +55,19 @@
       <ray>
         <scan>
           <horizontal>
-            <samples>720</samples>
-            <resolution>1</resolution>
-            <min_angle>-1.570796</min_angle>
-            <max_angle>1.570796</max_angle>
+            <samples>700</samples>
+            <resolution>0.84</resolution>
+            <min_angle>-3.1415926</min_angle>
+            <max_angle>3.1415926</max_angle>
           </horizontal>
         </scan>
         <range>
-          <min>0.10</min>
+          <min>0.1</min>
           <max>8.0</max>
           <resolution>0.01</resolution>
         </range>
         <noise>
-          <type>gaussian</type>
-
+          <type>gaussian</type>        
           <mean>0.0</mean>
           <stddev>0.01</stddev>
         </noise>
@@ -79,5 +78,4 @@
       </plugin>
     </sensor>
   </gazebo>
-
- </robot>
+</robot>

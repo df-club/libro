@@ -1,3 +1,16 @@
+2021/1/24 新增gmapping建图测试部分 by john1217
+版本说明：
+	1.增加gmapping.launch文件，用于配置gampping运行参数
+	2.修改gazebo_conf.xacro中的雷达参数
+	3.将gazebo_teleop.launch改为libro_gazebo.launch，增加开启gmapping部分
+使用方法：
+	1.运行前需要安装gmapping，sudo apt install ros-melodic-gmapping
+	2.roslaunch libro_model libro_gazebo.launch
+	3.rosrun libro_model libro_teleop.py
+	4.在运行libro_teleop.py的终端中按下相应按键进行控制。
+
+/*************************************************************************/
+
 2021/1/23 添加了激光雷达数据 by OscarXsb
 版本说明：
 	1.在meshes文件夹下添加rplidar底盘模型，修改了装配体

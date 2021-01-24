@@ -16,6 +16,7 @@ for libro_model robot</p>
   <depend>joint_state_publisher_gui</depend>
   <depend>gazebo</depend>
   <depend>gazebo_ros</depend>
+  <depend>gmapping</depend>
 
   <export>
     <architecture_independent />
