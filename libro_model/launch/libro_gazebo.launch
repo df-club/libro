@@ -17,13 +17,9 @@
 
     <!-- spawn model -->
     <node name="robot_gazebo_spawner" pkg="gazebo_ros" type="spawn_model" args="-urdf -model rbo -param robot_description" />
-
-    <!-- load controller yaml -->
-    <rosparam command="load" file="$(find libro_model)/config/gazebo_controller.yaml"/>
     <!-- controller manager -->
     <node name="controller_manager" pkg="controller_manager" type="spawner" ns="/"
         args="joint_state_controller mobile_base_controller"/>
-
     <!-- rviz -->
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_config)" />
 

@@ -4,6 +4,30 @@
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot name="libro_model"
   xmlns:xacro="http://ros.org/wiki/xacro">
+  <link name="base_footprint">
+        <visual>
+            <geometry>
+                    <box size="0.001 0.001 0.001"/>
+                </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+        </visual>
+       <inertial>
+                       <mass value="0.0001" />
+                       <inertia ixx="1.0" ixy="0.0" ixz="0.0"
+                                iyy="1.0" iyz="0.0"
+                                izz="1.0" />
+               </inertial>
+    </link>
+
+    <gazebo reference="base_footprint">
+        <turnGravityOff>false</turnGravityOff>
+    </gazebo>
+
+    <joint name="base_footprint_joint" type="fixed">
+        <origin xyz="0 0 0" />
+        <parent link="base_footprint" />
+        <child link="base_link" />
+    </joint>
   <link name="libro_chassis_link">
     <inertial>
       <origin xyz="5.68208583529243E-05 -1.08190137895018E-05 -0.0191328128743083" rpy="0 0 0" />

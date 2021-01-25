@@ -23,15 +23,23 @@
     <material>Gazebo/White</material>
   </gazebo>
   <gazebo reference="left_front_wheel_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
     <material>Gazebo/FlatBlack</material>
   </gazebo>
   <gazebo reference="right_front_wheel_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
     <material>Gazebo/FlatBlack</material>
   </gazebo>
   <gazebo reference="left_rear_wheel_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
     <material>Gazebo/FlatBlack</material>
   </gazebo>
   <gazebo reference="right_rear_wheel_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
     <material>Gazebo/FlatBlack</material>
   </gazebo>
   <gazebo reference="ydlidar_link">
@@ -46,13 +54,31 @@
       <legacyModeNS>true</legacyModeNS>
     </plugin>
   </gazebo>
-  
+  <gazebo>
+    <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>100.0</updateRate>
+      <robotNamespace>/</robotNamespace>
+      <leftFrontJoint>left_front_wheel_joint</leftFrontJoint>
+      <rightFrontJoint>right_front_wheel_joint</rightFrontJoint>
+      <leftRearJoint>left_rear_wheel_joint</leftRearJoint>
+      <rightRearJoint>right_rear_wheel_joint</rightRearJoint>
+      <wheelSeparation>0.12</wheelSeparation>
+      <wheelDiameter>0.065</wheelDiameter>
+      <torque>2.6</torque>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <robotBaseFrame>base_link</robotBaseFrame>
+      <broadcastTF>1</broadcastTF>
+    </plugin>
+  </gazebo>
   <!-- Add YDLidar plugin -->
   <gazebo reference="ydlidar_link">
     <sensor type="ray" name="ydlidar_sensor">
       <pose>0 0 0 0 0 0</pose>
       <visualize>false</visualize>
-      <update_rate>60</update_rate>
+      <update_rate>40</update_rate>
       <ray>
         <scan>
           <horizontal>
