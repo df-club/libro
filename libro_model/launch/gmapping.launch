@@ -3,10 +3,10 @@
         <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen" clear_params="true">
             <param name="base_frame" value="base_link"/>     <!-- 根据自己的基座标系名称进行修改 -->
             <param name="odom_frame" value="odom"/>               <!-- 根据自己的里程计坐标系名称进行修改 -->
-            <param name="map_update_interval" value="4.0"/>
+            <param name="map_update_interval" value="1"/>
             <!-- Set maxUrange < actual maximum range of the Laser -->
             <param name="maxRange" value="8.0"/>
-            <param name="maxUrange" value="5.0"/>
+            <param name="maxUrange" value="8.0"/>
             <param name="sigma" value="0.05"/>
             <param name="kernelSize" value="1"/>
             <param name="lstep" value="0.05"/>
