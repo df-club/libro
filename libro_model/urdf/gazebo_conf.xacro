@@ -19,6 +19,9 @@
   <wheel_trans prefix_name="right_rear" />
 
   <!-- Add Gazebo meterials tag -->
+  <gazebo reference="base_footprint">
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>
   <gazebo reference="libro_chassis_link">
     <material>Gazebo/White</material>
   </gazebo>
@@ -46,14 +49,6 @@
     <material> Gazebo/Grey </material>
   </gazebo>
 
-  <!-- Add Gazebo ros control tag -->
-  <gazebo>
-    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>/</robotNamespace>
-      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
-      <legacyModeNS>true</legacyModeNS>
-    </plugin>
-  </gazebo>
   <gazebo>
     <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
       <alwaysOn>true</alwaysOn>
@@ -65,12 +60,15 @@
       <rightRearJoint>right_rear_wheel_joint</rightRearJoint>
       <wheelSeparation>0.12</wheelSeparation>
       <wheelDiameter>0.065</wheelDiameter>
-      <torque>2.6</torque>
+      <torque>2</torque>
       <commandTopic>cmd_vel</commandTopic>
       <odometryTopic>odom</odometryTopic>
       <odometryFrame>odom</odometryFrame>
-      <robotBaseFrame>base_link</robotBaseFrame>
+      <robotBaseFrame>base_footprint</robotBaseFrame>
       <broadcastTF>1</broadcastTF>
+      <covariance_x>0.0001</covariance_x>
+      <covariance_y>0.0001</covariance_y>
+      <covariance_yaw>0.01</covariance_yaw>
     </plugin>
   </gazebo>
   <!-- Add YDLidar plugin -->
@@ -101,7 +99,7 @@
       </ray>
       <plugin name="gazebo_ros_ydlidar_controller" filename="libgazebo_ros_laser.so">
         <topicName>/laser/scan</topicName>
-        <frameName>base_link</frameName>
+        <frameName>ydlidar_link</frameName>
       </plugin>
     </sensor>
   </gazebo>

@@ -4,30 +4,21 @@
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot name="libro_model"
   xmlns:xacro="http://ros.org/wiki/xacro">
-  <link name="base_footprint">
-        <visual>
-            <geometry>
-                    <box size="0.001 0.001 0.001"/>
-                </geometry>
-            <origin rpy="0 0 0" xyz="0 0 0"/>
-        </visual>
-       <inertial>
-                       <mass value="0.0001" />
-                       <inertia ixx="1.0" ixy="0.0" ixz="0.0"
-                                iyy="1.0" iyz="0.0"
-                                izz="1.0" />
-               </inertial>
-    </link>
+  
+  <link name="base_footprint" />
+  <joint name="base_footprint_joint" type="fixed">
+    <origin xyz="0 0 0.04" rpy="0.0 0.0 0.0"/>
+    <parent link="base_footprint" />
+    <child link="base_link" />
+  </joint>
 
-    <gazebo reference="base_footprint">
-        <turnGravityOff>false</turnGravityOff>
-    </gazebo>
+  <link name="base_link"/>
+  <joint name="base_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="base_link"/>
+    <child link="libro_chassis_link"/>
+  </joint>
 
-    <joint name="base_footprint_joint" type="fixed">
-        <origin xyz="0 0 0" />
-        <parent link="base_footprint" />
-        <child link="base_link" />
-    </joint>
   <link name="libro_chassis_link">
     <inertial>
       <origin xyz="5.68208583529243E-05 -1.08190137895018E-05 -0.0191328128743083" rpy="0 0 0" />
@@ -166,120 +157,63 @@
     <axis xyz="0 1 0" />
     <!-- <limit lower="-180" upper="180" effort="0" velocity="0" /> -->
   </joint>
-  <link
-    name="ydlidar_link">
+  <link name="ydlidar_link">
     <inertial>
-      <origin
-        xyz="0.0231720323566563 0.00112954738407898 -0.045776403536883"
-        rpy="0 0 0" />
-      <mass
-        value="0.0573896608078332" />
-      <inertia
-        ixx="1.39246903875836E-05"
-        ixy="9.90784550405998E-07"
-        ixz="-1.12428911988727E-06"
-        iyy="3.45029950880899E-05"
-        iyz="-1.27754764540977E-07"
-        izz="4.72303912642056E-05" />
+      <origin xyz="0.0231720323566563 0.00112954738407898 -0.045776403536883" rpy="0 0 0" />
+      <mass value="0.0573896608078332" />
+      <inertia ixx="1.39246903875836E-05" ixy="9.90784550405998E-07" ixz="-1.12428911988727E-06" iyy="3.45029950880899E-05" iyz="-1.27754764540977E-07" izz="4.72303912642056E-05" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://libro_model/meshes/ydlidar_link.STL" />
+        <mesh filename="package://libro_model/meshes/ydlidar_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.772549019607843 0.752941176470588 0.733333333333333 1" />
+      <material name="">
+        <color rgba="0.772549019607843 0.752941176470588 0.733333333333333 1" />
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://libro_model/meshes/ydlidar_link.STL" />
+        <mesh filename="package://libro_model/meshes/ydlidar_link.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="ydlidar_joint"
-    type="fixed">
-    <origin
-      xyz="0.056136 -0.00016187 0.0859"
-      rpy="0 0 0" />
-    <parent
-      link="libro_chassis_link" />
-    <child
-      link="ydlidar_link" />
-    <axis
-      xyz="0 0 0" />
+  <joint name="ydlidar_joint" type="fixed">
+    <origin xyz="0.056136 -0.00016187 0.0859" rpy="0 0 0" />
+    <parent link="libro_chassis_link" />
+    <child link="ydlidar_link" />
+    <axis xyz="0 0 0" />
   </joint>
-  <link
-    name="lidar_underframe_link">
+  <link name="lidar_underframe_link">
     <inertial>
-      <origin
-        xyz="0.0713736461903973 -9.66678635817838E-05 0.01"
-        rpy="0 0 0" />
-      <mass
-        value="0.119982831853072" />
-      <inertia
-        ixx="3.99842050248324E-05"
-        ixy="8.82530750051684E-21"
-        ixz="-7.14343913461121E-22"
-        iyy="0.000103956889382291"
-        iyz="5.54441914502247E-22"
-        izz="0.000135942238950252" />
+      <origin xyz="0.0713736461903973 -9.66678635817838E-05 0.01" rpy="0 0 0" />
+      <mass value="0.119982831853072" />
+      <inertia ixx="3.99842050248324E-05" ixy="8.82530750051684E-21" ixz="-7.14343913461121E-22" iyy="0.000103956889382291" iyz="5.54441914502247E-22" izz="0.000135942238950252" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://libro_model/meshes/lidar_underframe_link.STL" />
+        <mesh filename="package://libro_model/meshes/lidar_underframe_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
+      <material name="">
+        <color rgba="1 1 1 1" />
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://libro_model/meshes/lidar_underframe_link.STL" />
+        <mesh filename="package://libro_model/meshes/lidar_underframe_link.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="lidar_underframe_joint"
-    type="fixed">
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
-    <parent
-      link="libro_chassis_link" />
-    <child
-      link="lidar_underframe_link" />
-    <axis
-      xyz="0 0 0" />
+  <joint name="lidar_underframe_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="libro_chassis_link" />
+    <child link="lidar_underframe_link" />
+    <axis xyz="0 0 0" />
   </joint>
 
-  <!-- base_link -->
-  <link name="base_link"/>
-  <joint name="base_joint" type="fixed">
-    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-    <parent link="base_link"/>
-    <child link="libro_chassis_link"/>
-  </joint>
 
 
 </robot>
