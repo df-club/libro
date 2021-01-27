@@ -1,4 +1,14 @@
-2021/1/24 重建launch目录结构 by john1217
+2021/1/27 修正了上一次更新所引进的bug by john1217
+版本说明：
+	1.主要是在copy amcl参数的时候引入的，应该将tf_broadcast参数设置为true
+	2.使用amcl时将map和odom静态绑定是不合理的，所以在navigation.launch中注释掉了
+	3.其他引入的bug慢慢修复吧...
+*使用方法同上次更新
+
+
+/*************************************************************************/
+
+2021/1/27 重建launch目录结构 by john1217
 版本说明：
 	1.重建了launch目录结构，建立include文件夹存放间接调用的launch
 	2.将libro_gazebo.launch更名为slam.launch
