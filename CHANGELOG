@@ -1,8 +1,16 @@
-2021/1/26 添加AMCl定位 by OscarXsb
+2021/1/27 添加AMCl定位 by OscarXsb
 版本说明：
 	1.修改了某些人的CHANGLOG。。。
 	2.更名gazebo_conf.xacro为 libro.gazebo
 	3.添加了 amcl.launch
+	
+/*************************************************************************/
+
+2021/1/27 修正了加载模型时的pid相关warning by john1217
+版本说明：
+	1.新增libro_control.yaml，其中包含了对4个wheel joint的pid参数
+	2.新增maps文件夹，用于mapserver保存gmapping所获取的静态地图文件
+>>>>>>> 9f68f116cda99bf058e7acadf099b34d11a536f1
 *使用方法同上次更新	
 
 /*************************************************************************/
