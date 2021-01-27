@@ -1,3 +1,18 @@
+2021/1/24 重建launch目录结构 by john1217
+版本说明：
+	1.重建了launch目录结构，建立include文件夹存放间接调用的launch
+	2.将libro_gazebo.launch更名为slam.launch
+	3.新建navigation.launch，包括静态地图调用，acml，move_base(尚未成功)
+	4.修改topic /Laser/scan to scan，修改gmapping相关参数用于匹配地图大小
+	5.其他
+使用方法：
+	1.建图：roslaunch libro_model slam.launch
+	2.键盘控制：rosrun libro_model libro_teleop.py
+	3.导航：roslaunch libro_model navigation.launch
+
+
+/*************************************************************************/
+
 2021/1/27 添加AMCl定位 by OscarXsb
 版本说明：
 	1.修改了某些人的CHANGLOG。。。
