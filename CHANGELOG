@@ -1,3 +1,21 @@
+2021/1/28 添加了move_base by OscarXsb
+版本说明：
+	1.重新合并了 2021/1/27 修正了上一次更新所引进的bug 的commit，修补上次的失误
+	2.添加了rrt功能包，具体操作还未进行
+	3.提出了 issue#2，有关于move_base重复规划的问题
+
+使用方法：
+	You should have/install the following python modules:
+		-OpenCV (cv2)
+			sudo apt-get install python-opencv
+		-Numpy
+			sudo apt-get install python-numpy
+		-Sklearn
+			sudo apt-get install python-scikits-learn
+	并且重新 catkin_make
+
+/*************************************************************************/
+
 2021/1/27 添加了move_base by OscarXsb
 版本说明：
 	1.添加了move_base功能，修改了yaml文件
