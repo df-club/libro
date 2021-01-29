@@ -1,7 +1,20 @@
 <?xml version="1.0"?>
-<robot>
+<robot
+    xmlns:xi="http://www.w3.org/2001/XInclude"  
+    xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz"  
+    xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model"  
+    xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"  
+    xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"  
+    xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom"  
+    xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#joint"  
+    xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"  
+    xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"  
+    xmlns:rendering="http://playerstage.sourceforge.net/gazebo/xmlschema/#rendering"  
+    xmlns:renderable="http://playerstage.sourceforge.net/gazebo/xmlschema/#renderable"  
+    xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics"  
+    xmlns:xacro="http://ros.org/wiki/xacro">
   <!-- Add transmission to each wheel joint -->
-  <macro name="wheel_trans" params="prefix_name">
+  <xacro:macro  name="wheel_trans" params="prefix_name">
     <transmission name="${prefix_name}_wheel_transmission">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${prefix_name}_wheel_joint">
@@ -11,12 +24,12 @@
         <mechanicalReducction>1</mechanicalReducction>
       </actuator>
     </transmission>
-  </macro>
+  </xacro:macro >
 
-  <wheel_trans prefix_name="left_front" />
-  <wheel_trans prefix_name="right_front" />
-  <wheel_trans prefix_name="left_rear" />
-  <wheel_trans prefix_name="right_rear" />
+  <xacro:wheel_trans prefix_name="left_front" />
+  <xacro:wheel_trans prefix_name="right_front" />
+  <xacro:wheel_trans prefix_name="left_rear" />
+  <xacro:wheel_trans prefix_name="right_rear" />
 
   <!-- Add Gazebo meterials tag -->
   <gazebo reference="base_footprint">

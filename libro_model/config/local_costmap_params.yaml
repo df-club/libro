@@ -6,7 +6,7 @@ local_costmap:
   footprint: [[0.13, 0.08], [0.13, -0.08], [-0.13, -0.08], [-0.13, 0.08]]  # if the robot is not circular
   update_frequency: 5.0
   publish_frequency: 2.0
-  static_map: false
+ # static_map: false
   rolling_window: true
   # The width & height of the map in meters.(int, default: 10)
   width: 4.0

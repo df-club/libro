@@ -6,7 +6,7 @@ global_costmap:
   footprint: [[0.13, 0.08], [0.13, -0.08], [-0.13, -0.08], [-0.13, 0.08]]  # if the robot is not circular
   update_frequency: 2.0
   publish_frequency: 0.5
-  static_map: true
+  #static_map: true
   rolling_window: false
   transform_tolerance: 0.5
   plugins:
