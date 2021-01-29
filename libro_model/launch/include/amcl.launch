@@ -12,15 +12,15 @@
         <param name="global_frame_id" value="$(arg global_frame_id)"/>
         <remap from="scan" to="$(arg scan_topic)"/>
         <!-- //全部滤波器参数 -->
-        <param name="min_particles" value="500"/>
+        <param name="min_particles" value="100"/>
         <!-- //允许的粒子数量的最小值，默认100 -->
         <param name="max_particles" value="5000"/>
         <!-- //允许的例子数量的最大值，默认5000 -->
-        <param name="kld_err" value="0.05"/>
+        <param name="kld_err" value="0.01"/>
         <!-- //真实分布和估计分布之间的最大误差，默认0.01 -->
         <param name="kld_z" value="0.99"/>
         <!-- //上标准分位数（1-p），其中p是估计分布上误差小于kld_err的概率，默认0.99 -->
-        <param name="update_min_d" value="0.2"/>
+        <param name="update_min_d" value="0.1"/>
         <!-- //在执行滤波更新前平移运动的距离，默认0.2m(对于里程计模型有影响，模型中根据运动和地图求最终位姿的释然时丢弃了路径中的相关所有信息，已知的只有最终位姿，为了规避不合理的穿过障碍物后的非零似然，这个值建议不大于机器人半径。否则因更新频率的不同可能产生完全不同的结果) -->
         <param name="update_min_a" value="0.5"/>
         <!-- //执行滤波更新前旋转的角度，默认pi/6 rad -->
@@ -32,7 +32,7 @@
         <!-- //慢速的平均权重滤波的指数衰减频率，用作决定什么时候通过增加随机位姿来recover，默认0（disable），可能0.001是一个不错的值 -->
         <param name="recovery_alpha_fast" value="0.0"/>
         <!-- //快速的平均权重滤波的指数衰减频率，用作决定什么时候通过增加随机位姿来recover，默认0（disable），可能0.1是个不错的值 -->
-        <param name="gui_publish_rate" value="10.0"/>
+        <param name="gui_publish_rate" value="-1.0"/>
         <!-- //扫描和路径发布到可视化软件的最大频率，设置参数为-1.0意为失能此功能，默认-1.0 -->
         <param name="save_pose_rate" value="0.5"/>
         <!-- //存储上一次估计的位姿和协方差到参数服务器的最大速率。被保存的位姿将会用在连续的运动上来初始化滤波器。-1.0失能。 -->
@@ -49,9 +49,9 @@
         <param name="laser_max_beams" value="30"/>
         <!-- //更新滤波器时，每次扫描中多少个等间距的光束被使用（减小计算量，测距扫描中相邻波束往往不是独立的可以减小噪声影响，太小也会造成信息量少定位不准） -->
 
-        <param name="laser_z_hit" value="0.5"/>
+        <param name="laser_z_hit" value="0.95"/>
         <!-- //模型的z_hit部分的混合权值，默认0.95(混合权重1.具有局部测量噪声的正确范围,以测量距离近似真实距离为均值，其后laser_sigma_hit为标准偏差的高斯分布的权重) -->
-        <param name="laser_z_short" value="0.05"/>
+        <param name="laser_z_short" value="0.1"/>
         <!-- //模型的z_short部分的混合权值，默认0.1（混合权重2.意外对象权重（类似于一元指数关于y轴对称0～测量距离（非最大距离）的部分：ηλe^(-λz)，其余部分为0，其中η为归一化参数，λ为laser_lambda_short,z为t时刻的一个独立测量值（一个测距值，测距传感器一次测量通常产生一系列的测量值）），动态的环境，如人或移动物体） -->
         <param name="laser_z_max" value="0.05"/>
         <!-- //模型的z_max部分的混合权值，默认0.05（混合权重3.测量失败权重（最大距离时为1，其余为0），如声呐镜面反射，激光黑色吸光对象或强光下的测量，最典型的是超出最大距离） -->
@@ -70,9 +70,9 @@
         <param name="odom_alpha1" value="0.2"/>
         <param name="odom_alpha2" value="0.2"/>
         <!-- translation std dev, m -->
-        <param name="odom_alpha3" value="0.8"/>
+        <param name="odom_alpha3" value="0.2"/>
         <param name="odom_alpha4" value="0.2"/>
-        <param name="odom_alpha5" value="0.1"/>
+        <param name="odom_alpha5" value="0.2"/>
         <param name="tf_broadcast" value="true"/>
         <param name="initial_pose_x" value="0.0"/>
         <param name="initial_pose_y" value="0.0"/>

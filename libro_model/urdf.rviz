@@ -5,8 +5,6 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /Map1
-        - /Map2
       Splitter Ratio: 0.36023053526878357
     Tree Height: 573
   - Class: rviz/Selection
@@ -158,7 +156,7 @@ Visualization Manager:
       Axes Radius: 0.009999999776482582
       Class: rviz/PoseArray
       Color: 255; 25; 0
-      Enabled: false
+      Enabled: true
       Head Length: 0.07000000029802322
       Head Radius: 0.029999999329447746
       Name: PoseArray
@@ -167,12 +165,12 @@ Visualization Manager:
       Shape: Arrow (Flat)
       Topic: /particlecloud
       Unreliable: false
-      Value: false
+      Value: true
     - Alpha: 1
       Buffer Length: 1
       Class: rviz/Path
       Color: 25; 255; 0
-      Enabled: false
+      Enabled: true
       Head Diameter: 0.30000001192092896
       Head Length: 0.20000000298023224
       Length: 0.30000001192092896
@@ -190,7 +188,7 @@ Visualization Manager:
       Shaft Length: 0.10000000149011612
       Topic: /move_base/GlobalPlanner/plan
       Unreliable: false
-      Value: false
+      Value: true
     - Alpha: 1
       Class: rviz/Polygon
       Color: 25; 255; 0
@@ -201,13 +199,65 @@ Visualization Manager:
       Value: true
     - Alpha: 0.699999988079071
       Class: rviz/Map
-      Color Scheme: map
+      Color Scheme: costmap
       Draw Behind: false
       Enabled: true
       Name: Map
-      Topic: ""
+      Topic: /move_base/local_costmap/costmap
       Unreliable: false
       Use Timestamp: false
+      Value: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        base_footprint:
+          Value: true
+        base_link:
+          Value: false
+        left_front_wheel_link:
+          Value: false
+        left_rear_wheel_link:
+          Value: false
+        libro_chassis_link:
+          Value: false
+        lidar_underframe_link:
+          Value: false
+        map:
+          Value: true
+        odom:
+          Value: true
+        right_front_wheel_link:
+          Value: false
+        right_rear_wheel_link:
+          Value: false
+        ydlidar_link:
+          Value: false
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        map:
+          odom:
+            base_footprint:
+              base_link:
+                libro_chassis_link:
+                  left_front_wheel_link:
+                    {}
+                  left_rear_wheel_link:
+                    {}
+                  lidar_underframe_link:
+                    {}
+                  right_front_wheel_link:
+                    {}
+                  right_rear_wheel_link:
+                    {}
+                  ydlidar_link:
+                    {}
+      Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
@@ -237,7 +287,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 11.441049575805664
+      Distance: 12.81397533416748
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
