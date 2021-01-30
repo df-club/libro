@@ -67,7 +67,7 @@
         <!-- //模型使用，可以是beam, likehood_field, likehood_field_prob（和likehood_field一样但是融合了beamskip特征官网的注释），默认是“likehood_field”  -->
 
         <param name="odom_model_type" value="diff"/>
-        <param name="odom_alpha1" value="0.2"/>
+        <param name="odom_alpha1" value="0.01"/>
         <param name="odom_alpha2" value="0.2"/>
         <!-- translation std dev, m -->
         <param name="odom_alpha3" value="0.2"/>
