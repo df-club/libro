@@ -1,3 +1,25 @@
+2021/1/31 添加 explore_lite pkg by OscarXsb
+版本说明：
+	1.添加 explore_lite pkg，并且已经成功部署
+	2.添加 rrt.rviz，使自动建图环境文件相对独立
+	3.添加 map_merge pkg，具体未知用途，等待下一步研究
+	4.删除了原有的 rrt pkg
+* 请注意：由于上一版本决定使用 rrt 进行自动建图，但是本次切换到了原理不同的 explore，libro_model中相关 launch 文件的名称仍然未作更改
+使用说明：
+	1.安装依赖
+		进入到工作空间，使用
+			rosdep install --from-paths src --ignore-src --rosdistro=melodic -y
+		自动安装依赖
+	2.编译工作空间
+		catkin_make
+	2.启动环境文件
+		roslaunch libro_model rrt.launch
+	3.启动自动建图launch文件
+		roslaunch explore_lite explore.launch
+
+
+/*************************************************************************/
+
 2021/1/31 修改move_base_params参数，以解决导航遇到障碍物的问题 by john1217
 版本说明：
 	1.基本将move_base_params回归到默认值
