@@ -1,3 +1,16 @@
+2021/1/31 新增使用move_base和gmapping配合建图 by OscarXsb
+版本说明：
+	1.调整原有的 move_base 参数（影响并不大）
+	2.新增使用move_base和gmapping配合建图的功能，在launch文件夹中新建rrt文件夹，内含rrt.launch所包含的文件。
+	3.若要更改include文件夹下的基本launch文件，请复制一份到rrt文件夹，避免影响move_base建图的基本功能
+	4.功能尚不完善，下一步将添加rrt自动建图模块。
+
+使用说明：
+	若要使用新增的move_base建图功能，需要启动 rrt.launch
+	* 请注意：功能尚不完善，需要在 rviz 中指定目标点建图。
+
+/*************************************************************************/
+
 2021/1/29 调整urdf和AMCL参数 by john1217
 版本说明：
 	1.调整机器人模型中base_footprint和base_link间的距离为0.55，使整个小车浮在地图上
