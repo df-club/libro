@@ -16,7 +16,7 @@
     <include file="$(find libro_model)/launch/include/move_base.launch"/>
 
     <!-- rviz -->
-    <arg name="rviz_config" default="$(find libro_model)/nav.rviz"/>
+    <arg name="rviz_config" default="$(find libro_model)/rviz/nav.rviz"/>
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_config)" />
     <!-- libro_model keyboard teleop control -->
     <!-- <node name="libro_teleop_publisher" pkg="libro_model" type="libro_teleop.py" /> -->

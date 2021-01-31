@@ -29,7 +29,7 @@ for libro_model robot</p>
   <export>
     <architecture_independent />
     <!-- set gazebo environment value -->
-    <gazebo_ros gazebo_model_path="${prefix}/models/"/>
+    <gazebo_ros gazebo_model_path="${prefix}/worlds/models/"/>
   </export>
 
 </package>

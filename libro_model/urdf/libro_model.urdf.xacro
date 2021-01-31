@@ -28,7 +28,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/meshes/base_link.STL" />
+        <mesh filename="package://libro_model/urdf/meshes/base_link.STL" />
       </geometry>
       <material name="">
         <color rgba="1 1 1 1" />
@@ -37,7 +37,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/meshes/base_link.STL" />
+        <mesh filename="package://libro_model/urdf/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -50,7 +50,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/meshes/right_front_wheel_link.STL" />
+        <mesh filename="package://libro_model/urdf/meshes/right_front_wheel_link.STL" />
       </geometry>
       <material name="">
         <color rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
@@ -59,7 +59,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/meshes/right_front_wheel_link.STL" />
+        <mesh filename="package://libro_model/urdf/meshes/right_front_wheel_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -79,7 +79,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/meshes/right_rear_wheel_link.STL" />
+        <mesh filename="package://libro_model/urdf/meshes/right_rear_wheel_link.STL" />
       </geometry>
       <material name="">
         <color rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
@@ -88,7 +88,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/meshes/right_rear_wheel_link.STL" />
+        <mesh filename="package://libro_model/urdf/meshes/right_rear_wheel_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -108,7 +108,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/meshes/left_front_wheel_link.STL" />
+        <mesh filename="package://libro_model/urdf/meshes/left_front_wheel_link.STL" />
       </geometry>
       <material name="">
         <color rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
@@ -117,7 +117,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/meshes/left_front_wheel_link.STL" />
+        <mesh filename="package://libro_model/urdf/meshes/left_front_wheel_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -137,7 +137,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/meshes/left_rear_wheel_link.STL" />
+        <mesh filename="package://libro_model/urdf/meshes/left_rear_wheel_link.STL" />
       </geometry>
       <material name="">
         <color rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
@@ -146,7 +146,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/meshes/left_rear_wheel_link.STL" />
+        <mesh filename="package://libro_model/urdf/meshes/left_rear_wheel_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -166,7 +166,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/meshes/ydlidar_link.STL" />
+        <mesh filename="package://libro_model/urdf/meshes/ydlidar_link.STL" />
       </geometry>
       <material name="">
         <color rgba="0.772549019607843 0.752941176470588 0.733333333333333 1" />
@@ -175,7 +175,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/meshes/ydlidar_link.STL" />
+        <mesh filename="package://libro_model/urdf/meshes/ydlidar_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -194,7 +194,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/meshes/lidar_underframe_link.STL" />
+        <mesh filename="package://libro_model/urdf/meshes/lidar_underframe_link.STL" />
       </geometry>
       <material name="">
         <color rgba="1 1 1 1" />
@@ -203,7 +203,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/meshes/lidar_underframe_link.STL" />
+        <mesh filename="package://libro_model/urdf/meshes/lidar_underframe_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -213,7 +213,4 @@
     <child link="lidar_underframe_link" />
     <axis xyz="0 0 0" />
   </joint>
-
-
-
 </robot>
