@@ -1,3 +1,14 @@
+2021/2/1 将explore.launch作为引用添加到rrt.launch by OscarXsb
+版本说明：
+	1.将explore.launch引用添加到rrt.launch
+	2.更改pkg dir名称为explore_lite
+
+使用说明：
+	自动建图只需要运行
+		roslaunch libro_model rrt.launch
+
+/*************************************************************************/
+
 2021/1/31 整理项目的文件夹结构 by john1217
 版本说明：
 	1.将原meshes移至urdf文件夹中，关于机器人模型的描述文件统一在urdf文件夹下
@@ -21,9 +32,9 @@
 		自动安装依赖
 	2.编译工作空间
 		catkin_make
-	2.启动环境文件
+	3.启动环境文件
 		roslaunch libro_model rrt.launch
-	3.启动自动建图launch文件
+	4.启动自动建图launch文件
 		roslaunch explore_lite explore.launch
 
 
