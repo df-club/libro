@@ -1,3 +1,11 @@
+2021/2/1 更新地图 by OscarXsb
+版本说明：
+	1.更新gazebo world
+	2.使用explore_lite重新扫描地图并保存
+
+*使用方法不变
+/*************************************************************************/
+
 2021/2/1 将explore.launch作为引用添加到rrt.launch by OscarXsb
 版本说明：
 	1.将explore.launch引用添加到rrt.launch
