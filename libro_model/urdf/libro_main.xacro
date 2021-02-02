@@ -15,6 +15,6 @@
     xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics"  
     xmlns:xacro="http://ros.org/wiki/xacro">  
   
-  <include filename="$(find libro_model)/urdf/libro_model.urdf.xacro" />
-  <include filename="$(find libro_model)/urdf/gazebo_conf.xacro" />
+  <xacro:include filename="$(find libro_model)/urdf/libro_model.urdf.xacro" />
+  <xacro:include filename="$(find libro_model)/urdf/libro.gazebo" />
 </robot>

@@ -16,11 +16,20 @@ for libro_model robot</p>
   <depend>joint_state_publisher_gui</depend>
   <depend>gazebo</depend>
   <depend>gazebo_ros</depend>
+  <depend>std_msgs</depend>
+  <depend>message_generation</depend>
+  <depend>move_base</depend>
+  <depend>map_server</depend>
+  <depend>amcl</depend>
+  <depend>gmapping</depend>
+  <depend>dwa_local_planner</depend>
+  <depend>urdf</depend>
+  <depend>xacro</depend>
 
   <export>
     <architecture_independent />
     <!-- set gazebo environment value -->
-    <gazebo_ros gazebo_model_path="${prefix}/models/"/>
+    <gazebo_ros gazebo_model_path="${prefix}/worlds/models/"/>
   </export>
 
 </package>

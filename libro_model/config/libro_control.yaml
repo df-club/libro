@@ -1,0 +1,23 @@
+libro:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+  
+  # Effort Controllers ---------------------------------------
+  left_front_wheel_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: left_front_wheel_joint
+    pid: {p: 100.0, i: 0.1, d: 10.0}
+  right_front_wheel_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: right_front_wheel_joint
+    pid: {p: 100.0, i: 0.1, d: 10.0}
+  left_rear_wheel_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: left_rear_wheel_joint
+    pid: {p: 100.0, i: 0.1, d: 10.0}
+  right_rear_wheel_effort_controller:
+    type: effort_controllers/JointEffortController
+    joint: right_rear_wheel_joint
+    pid: {p: 100.0, i: 0.1, d: 10.0}
