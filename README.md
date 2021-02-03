@@ -30,7 +30,10 @@ libro_model文件夹结构说明：
 |explore_lite|提供基于greedy frontier-based的地图搜索算法|
 
 ## 使用方法
-- SLAM建图：roslaunch libro_model slam.launch
-- 键盘控制：rosrun libro_model libro_teleop.py
-- 导航功能：roslaunch libro_model navigation.launch
-- 自动搜索slam建图：roslaunch libro_model auto_slam.launch
+- SLAM建图：roslaunch libro_exec manual_slam.launch 
+- 键盘控制：roslaunch libro_controller libro_teleop.launch 
+- 导航功能：roslaunch libro_exec navigation.launch 
+- 自动搜索slam建图：roslaunch libro_exec auto_slam.launch 
+- 保存地图 :
+  进入到libro_map文件夹下的map文件夹，输入
+  sh save_map.sh
