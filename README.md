@@ -9,14 +9,14 @@ libro_model文件夹结构说明：
 
 |文件（夹）名|功能描述|
 |:-----|:----:|
-|launch|用于执行如slam、navigation等功能的启动文件|
-|config|各功能模块的参数配置文件|
-|maps|通过slam所得到的环境地图文件|
-|rviz|rviz环境配置文件|
-|scripts|ros python程序文件|
-|urdf|机器人模型及仿真文件|
-|worlds|环境模型文件|
-|CMakeLists.txt| ROS功能包编译配置文件 |
+|libro_exec|用于执行如slam、navigation等功能的启动文件|
+|libro_map|通过 map_server 提供地图服务|
+|lirbo_amcl|为 navigation 提供定位服务|
+|libro_move_base|为 navigation 和 explore 提供 move_base 导航功能|
+|libro_model|机器人模型及仿真文件|
+|libro_controller|键盘控制文件|
+|libro_gmapping|提供 gmapping 扫描地图功能|
+|CMakeLists.txt|ROS功能包编译配置文件|
 |package.xml|ROS功能包编译配置文件|
 
 ## 安装依赖
