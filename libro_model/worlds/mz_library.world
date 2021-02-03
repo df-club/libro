@@ -5,7 +5,7 @@
             <uri>model://sun</uri>
         </include>
         <include>
-            <uri>model://ground_plane</uri>
+            <uri>model://library_groundplane</uri>
         </include>
         <include>
             <uri>model://mz_library</uri>

@@ -197,16 +197,6 @@ Visualization Manager:
       Topic: /move_base/global_costmap/footprint
       Unreliable: false
       Value: true
-    - Alpha: 0.699999988079071
-      Class: rviz/Map
-      Color Scheme: costmap
-      Draw Behind: false
-      Enabled: true
-      Name: Map
-      Topic: /move_base/local_costmap/costmap
-      Unreliable: false
-      Use Timestamp: false
-      Value: true
     - Class: rviz/TF
       Enabled: false
       Frame Timeout: 15
@@ -221,16 +211,6 @@ Visualization Manager:
         {}
       Update Interval: 0
       Value: false
-    - Alpha: 0.699999988079071
-      Class: rviz/Map
-      Color Scheme: costmap
-      Draw Behind: false
-      Enabled: true
-      Name: Map
-      Topic: /move_base/global_costmap/costmap
-      Unreliable: false
-      Use Timestamp: false
-      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -259,7 +239,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 4.1297221183776855
+      Distance: 13.595865249633789
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
