@@ -1,3 +1,27 @@
+2021/2/3 重构了整个系统 by OscarXsb
+版本说明：
+	1.重构目录，相应功能存放到相应package
+	2.添加保存地图sh文件
+	3.添加键盘控制launch文件
+	4.更改 libro_exec 为主要包
+	5.上次修改的warning有一部分复原（auto_slam.launch文件相关）
+使用说明：
+	1.更改了环境变量，需要catkin_make
+	2.自动建图
+		roslaunch libro_exec auto_slam.launch 
+	3.自动导航
+		roslaunch libro_exec navigation.launch 
+	4.手动建图
+		roslaunch libro_exec manual_slam.launch 
+	5.保存地图（新增功能）
+		进入到libro_map文件夹下的map文件夹，输入
+			sh save_map.sh
+		将会再同目录下生成 map_saved.pgm 和 map_saved.yaml ，使用前请更名
+	6.添加键盘控制launch文件
+		roslaunch libro_controller libro_teleop.launch 
+	页面上没有操作提示，但是操作方法同之前
+/*************************************************************************/
+
 2021/2/3 增加了gazebo地面 by OscarXsb
 版本说明：
 	增加了gazebo地面

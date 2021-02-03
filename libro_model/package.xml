@@ -28,9 +28,6 @@ for libro_model robot</p>
   <depend>explore_lite</depend>
 
   <export>
-    <architecture_independent />
-    <!-- set gazebo environment value -->
-    <gazebo_ros gazebo_model_path="${prefix}/worlds/models/"/>
   </export>
 
 </package>

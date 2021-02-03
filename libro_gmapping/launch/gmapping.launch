@@ -1,0 +1,17 @@
+<launch>
+  <arg name="scan_topic" default="scan" />
+  <arg name="base_frame" default="base_footprint"/>
+  <arg name="odom_frame" default="odom"/>
+  <node name="slam_gmapping" pkg="gmapping" type="slam_gmapping">
+    <param name="base_frame" value="$(arg base_frame)"/>
+    <param name="odom_frame" value="$(arg odom_frame)"/>
+    <remap from="scan" to="$(arg scan_topic)"/>
+    <param name="maxUrange" value="5.0"/>
+    <param name="maxRange" value="8.0"/>
+    <param name="map_update_interval" value="1.0"/>        
+    <param name="xmin" value="-10.0"/>
+    <param name="ymin" value="-10.0"/>
+    <param name="xmax" value="10.0"/>
+    <param name="ymax" value="10.0"/>
+  </node>
+</launch>

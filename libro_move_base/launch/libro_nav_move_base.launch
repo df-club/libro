@@ -1,0 +1,10 @@
+<!-- LIBRO NAV MOVE_BASE-->
+<launch>
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
+    <rosparam file="$(find libro_move_base)/config/libro_nav/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find libro_move_base)/config/libro_nav/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find libro_move_base)/config/libro_nav/move_base_params.yaml" command="load" />
+    <rosparam file="$(find libro_move_base)/config/libro_nav/local_planner_params.yaml" command="load" ns="DWAPlannerROS"/>
+    <rosparam file="$(find libro_move_base)/config/libro_nav/global_planner_params.yaml" command="load" ns="GlobalPlanner"/>
+  </node>
+</launch>
