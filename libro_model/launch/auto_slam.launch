@@ -1,0 +1,17 @@
+<launch>
+    <!-- libro model spawn -->
+    <include file="$(find libro_model)/launch/include/libro_spawn.launch" />
+    <!-- gazebo -->
+    <include file="$(find libro_model)/launch/include/gazebo_world.launch" />
+    <!-- gmapping -->
+    <include file="$(find libro_model)/launch/include/gmapping.launch" />
+    <!-- Move base -->
+    <include file="$(find libro_model)/launch/include/move_base.launch"/>
+    <!-- Explore_lite -->
+    <include file="$(find libro_model)/launch/include/explore_lite.launch"/>
+    <!-- Rviz env -->
+    <arg name="rviz_config" default="$(find libro_model)/rviz/auto_slam.rviz"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_config)" />
+    <!-- save the map -->
+    <!-- rosrun map_server map_saver -f mymap -->
+</launch>

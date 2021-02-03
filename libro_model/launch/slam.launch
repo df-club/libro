@@ -5,9 +5,6 @@
     <include file="$(find libro_model)/launch/include/gazebo_world.launch" />
     <!-- gmapping -->
     <include file="$(find libro_model)/launch/include/gmapping.launch" />
-    <!-- AMCL -->
-    <!-- <include file="$(find libro_model)/launch/include/amcl.launch" />     -->
-
     <!-- save the map -->
     <!-- rosrun map_server map_saver -f mymap -->
     <!-- rviz -->

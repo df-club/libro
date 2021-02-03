@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
 	amcl
 	gmapping
 	dwa_local_planner
+	explore_lite
 )
 
 catkin_package(

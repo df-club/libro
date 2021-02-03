@@ -19,8 +19,18 @@ libro_model文件夹结构说明：
 |CMakeLists.txt| ROS功能包编译配置文件 |
 |package.xml|ROS功能包编译配置文件|
 
+## 安装依赖
+手动安装依赖包：sudo apt install ros-melodic-(包名)
+
+|包名（主要）|功能描述|
+|:-----|:----:|
+|gmapping|基于粒子滤波的SLAM算法|
+|amcl|自适应蒙特卡洛定位算法，采用粒子滤波来跟踪已知地图中机器人位姿|
+|move_base|提供ROS导航的整体框架，包括路径规划、代价地图、行为恢复等模块|
+|explore_lite|提供基于greedy frontier-based的地图搜索算法|
+
 ## 使用方法
 - SLAM建图：roslaunch libro_model slam.launch
 - 键盘控制：rosrun libro_model libro_teleop.py
 - 导航功能：roslaunch libro_model navigation.launch
-- 基于explore_lite的自动slam建图：roslaunch libro_model rrt.launch
+- 自动搜索slam建图：roslaunch libro_model auto_slam.launch

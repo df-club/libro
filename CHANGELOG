@@ -1,3 +1,15 @@
+2021/2/3 增加了auto_slam.launch，解决了一些WARNING by john1217
+版本说明：
+	1.解决了move_base中的几个由参数名版本变化所导致的WARNING
+	2.增加了auto_slam.launch，计划用于灵活调用如explore_lite,rrt等不同地图搜索算法
+	3.增加了explore_lite.launch，用于explore_lite的配置
+	4.（explore_lite算法调用map构建成功，调用costmap的地图构建没有成功）
+使用方法：
+	1.sudo apt install ros-melodic-explore_lite
+	2.搜索建图：roslaunch libro_model auto_slam.launch
+
+/*************************************************************************/
+
 2021/2/1 更新地图 by OscarXsb
 版本说明：
 	1.更新gazebo world
