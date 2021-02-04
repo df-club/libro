@@ -3,20 +3,19 @@
 LIBRO is short for LIBrary management RObot
 
 ## 文件说明
-仓库中的libro_model文件夹包括主要项目工程文件，CHANGELOG文件记录开发中信息，其他文件一般为项目所引用的功能包。
+仓库中的多个功能包都是在 Libro 机器人运行时必不可少的，以下是各个 package 的功能介绍，
 
-libro_model文件夹结构说明：
-
-|文件（夹）名|功能描述|
+|功能包名|功能描述|
 |:-----|:----:|
-|launch|用于执行如slam、navigation等功能的启动文件|
-|config|各功能模块的参数配置文件|
-|maps|通过slam所得到的环境地图文件|
-|rviz|rviz环境配置文件|
-|scripts|ros python程序文件|
-|urdf|机器人模型及仿真文件|
-|worlds|环境模型文件|
-|CMakeLists.txt| ROS功能包编译配置文件 |
+|libro_exec|用于执行如slam、navigation等功能的启动文件|
+|libro_map|通过 map_server 提供地图服务|
+|lirbo_amcl|为 navigation 提供定位服务|
+|libro_move_base|为 navigation 和 explore 提供 move_base 导航功能|
+|libro_model|机器人模型及仿真文件|
+|libro_controller|键盘控制文件|
+|libro_gmapping|提供 gmapping 扫描地图功能|
+|libro_sim|提供在gazebo中libro仿真的环境文件|
+|CMakeLists.txt|ROS功能包编译配置文件|
 |package.xml|ROS功能包编译配置文件|
 
 ## 安装依赖
