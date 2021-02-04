@@ -75,10 +75,11 @@
       <wheelDiameter>0.065</wheelDiameter>
       <torque>2</torque>
       <commandTopic>cmd_vel</commandTopic>
-      <odometryTopic>odom</odometryTopic>
-      <odometryFrame>odom</odometryFrame>
+      <odometryTopic>odom_wheel</odometryTopic>
+      <odometryFrame>odom_wheel</odometryFrame>
       <robotBaseFrame>base_footprint</robotBaseFrame>
-      <broadcastTF>1</broadcastTF>
+      <!-- 0 means use robot_pose_efk publish tf -->
+      <broadcastTF>0</broadcastTF>
       <covariance_x>0.0001</covariance_x>
       <covariance_y>0.0001</covariance_y>
       <covariance_yaw>0.01</covariance_yaw>
@@ -116,4 +117,24 @@
       </plugin>
     </sensor>
   </gazebo>
+  <!-- Add IMU plugin -->
+  <gazebo reference="imu_link">
+        <gravity>true</gravity>
+        <sensor name="imu_sensor" type="imu">
+            <always_on>true</always_on>
+            <update_rate>100</update_rate>
+            <visualize>true</visualize>
+            <topic>__default_topic__</topic>
+            <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+                <topicName>imu_data</topicName>
+                <bodyName>imu_link</bodyName>
+                <updateRateHZ>100.0</updateRateHZ>
+                <gaussianNoise>0.0</gaussianNoise>
+                <xyzOffset>0 0 0</xyzOffset>
+                <rpyOffset>0 0 0</rpyOffset>
+                <frameName>imu_link</frameName>
+            </plugin>
+            <pose>0 0 0 0 0 0</pose>
+        </sensor>
+    </gazebo>
 </robot>

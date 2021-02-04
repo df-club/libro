@@ -2,6 +2,6 @@
     <include file="$(find libro_model)/launch/libro_model_started.launch" />
     <include file="$(find libro_sim)/launch/library_sim.launch" />
     <include file="$(find libro_gmapping)/launch/gmapping.launch" />
-    <arg name="rviz_config" default="$(find libro_model)/rviz/slam.rviz"/>
+    <arg name="rviz_config" default="$(find libro_exec)/rviz/slam.rviz"/>
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_config)" />
 </launch>
