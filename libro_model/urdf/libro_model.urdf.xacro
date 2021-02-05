@@ -4,7 +4,7 @@
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot name="libro_model"
   xmlns:xacro="http://ros.org/wiki/xacro">
-
+  
   <link name="base_footprint" />
   <joint name="base_footprint_joint" type="fixed">
     <origin xyz="0 0 0.055" rpy="0.0 0.0 0.0"/>
@@ -213,26 +213,33 @@
     <child link="lidar_underframe_link" />
     <axis xyz="0 0 0" />
   </joint>
-  <link name="imu_link">
+
+  <link name="camera_link">
     <inertial>
-      <mass value="0.01" />
-      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+      <origin xyz="-0.00303115254709119 9.98333360424652E-16 -5.12569483805715E-05"  rpy="0 0 0" />
+      <mass value="0.00145671307075292" />
+      <inertia  ixx="6.93646665527772E-08" ixy="3.04630454817989E-24" ixz="-1.09673943150479E-10"  iyy="3.98881873637141E-08"  iyz="-9.33337790838574E-24"  izz="3.98920145491929E-08" />
     </inertial>
     <visual>
+      <origin xyz="0 0 0"  rpy="0 0 0" />
       <geometry>
-        <box size="0.01 0.01 0.01"/>
+        <mesh filename="package://libro_model/urdf/meshes/camera_link.STL" />
       </geometry>
+      <material  name="">
+        <color rgba="1 1 1 1" />
+      </material>
     </visual>
     <collision>
+      <origin xyz="0 0 0"  rpy="0 0 0" />
       <geometry>
-        <box size="0.01 0.01 0.01"/>
+        <mesh  filename="package://libro_model/urdf/meshes/camera_link.STL" />
       </geometry>
     </collision>
   </link>
-  <joint name="imu_joint" type="fixed">
-    <origin xyz="0 0 0" rpy="0 0 0" />
-    <parent link="libro_chassis_link" />
-    <child link="imu_link" />
-    <axis xyz="0 0 0" />
+  <joint name="camera_joint" type="fixed">
+    <origin  xyz="0.12531 -0.00043191 -0.023" rpy="0 0 0" />
+    <parent  link="libro_chassis_link" />
+    <child link="camera_link" />
+    <axis  xyz="0 1 0" />
   </joint>
 </robot>
