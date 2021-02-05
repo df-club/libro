@@ -5,7 +5,7 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /MarkerArray1/Status1
+        - /TF1/Frames1
       Splitter Ratio: 0.5722222328186035
     Tree Height: 416
   - Class: rviz/Selection
@@ -70,6 +70,11 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        imu_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         left_front_wheel_link:
           Alpha: 1
           Show Axes: false
@@ -175,25 +180,67 @@ Visualization Manager:
       Unreliable: false
       Value: true
     - Class: rviz/TF
-      Enabled: false
+      Enabled: true
       Frame Timeout: 15
       Frames:
         All Enabled: false
+        base_footprint:
+          Value: true
+        base_link:
+          Value: false
+        imu_link:
+          Value: false
+        left_front_wheel_link:
+          Value: false
+        left_rear_wheel_link:
+          Value: false
+        libro_chassis_link:
+          Value: false
+        lidar_underframe_link:
+          Value: false
+        map:
+          Value: true
+        odom:
+          Value: true
+        right_front_wheel_link:
+          Value: false
+        right_rear_wheel_link:
+          Value: false
+        ydlidar_link:
+          Value: false
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        {}
+        map:
+          odom:
+            base_footprint:
+              base_link:
+                libro_chassis_link:
+                  imu_link:
+                    {}
+                  left_front_wheel_link:
+                    {}
+                  left_rear_wheel_link:
+                    {}
+                  lidar_underframe_link:
+                    {}
+                  right_front_wheel_link:
+                    {}
+                  right_rear_wheel_link:
+                    {}
+                  ydlidar_link:
+                    {}
       Update Interval: 0
-      Value: false
+      Value: true
     - Class: rviz/MarkerArray
       Enabled: true
       Marker Topic: /explore/frontiers
       Name: MarkerArray
       Namespaces:
-        {}
+        frontiers: true
       Queue Size: 100
       Value: true
   Enabled: true
@@ -224,7 +271,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 14.365446090698242
+      Distance: 5.87080717086792
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1

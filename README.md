@@ -24,9 +24,15 @@ LIBRO is short for LIBrary management RObot
 |包名（主要）|功能描述|
 |:-----|:----:|
 |gmapping|基于粒子滤波的SLAM算法|
-|amcl|自适应蒙特卡洛定位算法，采用粒子滤波来跟踪已知地图中机器人位姿|
-|move_base|提供ROS导航的整体框架，包括路径规划、代价地图、行为恢复等模块|
+|navigation|用于实现导航功能的一系列包的合集|
+|- map_server|用于保存和发布map信息|
+|- amcl|自适应蒙特卡洛定位算法，采用粒子滤波来跟踪已知地图中机器人位姿|
+|- move_base|提供ROS导航的基础框架，用于连接navigation中其他功能包|
+|- costmap2d|在静态地图的基础上添加用于导航规划的局部和全局代价信息|
+|- XXX_planner|不同的路径规划算法，用于局部和全局的路径规划|
+|- recovery_behaviors|用于机器人在导航过程中遇到问题时的行为恢复|
 |explore_lite|提供基于greedy frontier-based的地图搜索算法|
+|robot_pose_ekf|用于融合里程计，惯性测量单元和视觉里程计的传感器输出，从而减少测量中的总体误差|
 
 ## 使用方法
 - SLAM建图：roslaunch libro_exec manual_slam.launch 
