@@ -25,7 +25,7 @@ min_vel_trans: 0.1
 max_vel_x: 0.5
 
 # The minimum x velocity for the robot in m/s, negative for backwards motion. (double, default: 0.0)
-min_vel_x: -0.1
+min_vel_x: -0.5
 
 # The maximum y velocity for the robot in m/s (double, default: 0.1)
 max_vel_y: 0.0
