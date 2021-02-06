@@ -4,7 +4,7 @@
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot name="libro_model"
   xmlns:xacro="http://ros.org/wiki/xacro">
-
+  
   <link name="base_footprint" />
   <joint name="base_footprint_joint" type="fixed">
     <origin xyz="0 0 0.055" rpy="0.0 0.0 0.0"/>
@@ -213,8 +213,7 @@
     <child link="lidar_underframe_link" />
     <axis xyz="0 0 0" />
   </joint>
-
-  <link name="camera_link">
+    <link name="camera_link">
     <inertial>
       <origin xyz="-0.00303115254709119 9.98333360424652E-16 -5.12569483805715E-05" rpy="0 0 0" />
       <mass value="0.00145671307075292" />
