@@ -1,0 +1,10 @@
+<launch>
+    <include file="$(find libro_model)/launch/libro_model_started.launch" />
+    <include file="$(find libro_sim)/launch/library_sim.launch" />
+   <include file="$(find libro_map)/launch/lib_map.launch"/>
+    <include file="$(find libro_amcl)/launch/libro_nav_amcl.launch" />
+    <include file="$(find libro_move_base)/launch/libro_nav_move_base.launch"/>
+
+    <arg name="rviz_config" default="$(find libro_exec)/rviz/nav.rviz"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_config)" />
+</launch>

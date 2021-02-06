@@ -25,11 +25,10 @@ for libro_model robot</p>
   <depend>dwa_local_planner</depend>
   <depend>urdf</depend>
   <depend>xacro</depend>
+  <depend>explore_lite</depend>
+  <depend>robot_pose_ekf</depend>
 
   <export>
-    <architecture_independent />
-    <!-- set gazebo environment value -->
-    <gazebo_ros gazebo_model_path="${prefix}/worlds/models/"/>
   </export>
 
 </package>

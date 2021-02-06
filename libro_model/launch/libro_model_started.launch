@@ -1,0 +1,11 @@
+<!-- LIBRO STARTED-->
+<launch>
+    <arg name="model" default="$(find libro_model)/urdf/libro_main.xacro"/>
+    <arg name="use_gui" default="true"/>
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)"/>
+    <rosparam file="$(find libro_model)/config/libro_control.yaml" command="load"/>
+    <node name="robot_gazebo_spawner" pkg="gazebo_ros" type="spawn_model" args="-urdf -model rbo -param robot_description" />
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+    <include file="$(find libro_model)/launch/libro_pose_ekf.launch"/>
+</launch>    

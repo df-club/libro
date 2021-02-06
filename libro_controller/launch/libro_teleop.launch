@@ -1,0 +1,3 @@
+<launch>
+    <node name="libro_teleop_publisher" pkg="libro_controller" type="libro_teleop.py" output="screen"/> 
+</launch>

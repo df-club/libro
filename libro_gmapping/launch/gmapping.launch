@@ -1,0 +1,24 @@
+<launch>
+  <arg name="scan_topic" default="scan" />
+  <arg name="base_frame" default="base_footprint"/>
+  <arg name="odom_frame" default="odom_combined"/>
+  <node name="slam_gmapping" pkg="gmapping" type="slam_gmapping">
+    <param name="base_frame" value="$(arg base_frame)"/>
+    <param name="odom_frame" value="$(arg odom_frame)"/>
+    <remap from="scan" to="$(arg scan_topic)"/>
+    <param name="maxUrange" value="5.0"/>
+    <param name="maxRange" value="8.0"/>
+    <!-- 扫描地图的的更新速度 -->
+    <param name="map_update_interval" value="0.5"/>  
+    <!-- linearUpdate(default: 1.0),每当机器人平移这么远才扫描一次。小场景的话应该改小一点。 --> 
+    <param name="linearUpdate" value="0.5"/> 
+    <!-- angularUpdate(default: 0.5),每当机器人旋转这么多才扫描一次。小场景的话应该改小一点。-->
+    <param name="angularUpdate" value="0.5"/>   
+    <!-- temporalUpdate(default: -1.0),当最后一次更新是x秒以前就自动更新一次-->
+    <param name="temporalUpdate" value="-1.0"/>   
+    <param name="xmin" value="-10.0"/>
+    <param name="ymin" value="-10.0"/>
+    <param name="xmax" value="10.0"/>
+    <param name="ymax" value="10.0"/>
+  </node>
+</launch>
