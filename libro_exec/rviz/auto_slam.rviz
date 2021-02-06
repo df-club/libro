@@ -5,7 +5,6 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /TF1/Frames1
       Splitter Ratio: 0.5722222328186035
     Tree Height: 614
   - Class: rviz/Selection
@@ -185,61 +184,19 @@ Visualization Manager:
       Unreliable: false
       Value: true
     - Class: rviz/TF
-      Enabled: true
+      Enabled: false
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        base_footprint:
-          Value: true
-        base_link:
-          Value: false
-        imu_link:
-          Value: false
-        left_front_wheel_link:
-          Value: false
-        left_rear_wheel_link:
-          Value: false
-        libro_chassis_link:
-          Value: false
-        lidar_underframe_link:
-          Value: false
-        map:
-          Value: true
-        odom:
-          Value: true
-        right_front_wheel_link:
-          Value: false
-        right_rear_wheel_link:
-          Value: false
-        ydlidar_link:
-          Value: false
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        map:
-          odom:
-            base_footprint:
-              base_link:
-                libro_chassis_link:
-                  imu_link:
-                    {}
-                  left_front_wheel_link:
-                    {}
-                  left_rear_wheel_link:
-                    {}
-                  lidar_underframe_link:
-                    {}
-                  right_front_wheel_link:
-                    {}
-                  right_rear_wheel_link:
-                    {}
-                  ydlidar_link:
-                    {}
+        {}
       Update Interval: 0
-      Value: true
+      Value: false
     - Class: rviz/MarkerArray
       Enabled: true
       Marker Topic: /explore/frontiers
