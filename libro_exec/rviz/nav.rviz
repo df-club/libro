@@ -257,26 +257,27 @@ Visualization Manager:
       Show Names: true
       Tree:
         map:
-          odom_combined:
-            base_footprint:
-              base_link:
-                libro_chassis_link:
-                  camera_link:
-                    {}
-                  imu_link:
-                    {}
-                  left_front_wheel_link:
-                    {}
-                  left_rear_wheel_link:
-                    {}
-                  lidar_underframe_link:
-                    {}
-                  right_front_wheel_link:
-                    {}
-                  right_rear_wheel_link:
-                    {}
-                  ydlidar_link:
-                    {}
+          {}
+        odom_combined:
+          base_footprint:
+            base_link:
+              libro_chassis_link:
+                camera_link:
+                  {}
+                imu_link:
+                  {}
+                left_front_wheel_link:
+                  {}
+                left_rear_wheel_link:
+                  {}
+                lidar_underframe_link:
+                  {}
+                right_front_wheel_link:
+                  {}
+                right_rear_wheel_link:
+                  {}
+                ydlidar_link:
+                  {}
       Update Interval: 0
       Value: true
     - Alpha: 0.699999988079071
@@ -302,7 +303,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: odom_combined
+    Fixed Frame: map
     Frame Rate: 30
   Name: root
   Tools:
@@ -326,16 +327,16 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 17.269289016723633
+      Distance: 13.145103454589844
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 1.386574149131775
-        Y: 0.19803375005722046
-        Z: -0.6159754395484924
+        X: -0.788770854473114
+        Y: -0.8306112885475159
+        Z: -0.013736450113356113
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
