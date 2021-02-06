@@ -74,8 +74,8 @@
       <wheelDiameter>0.065</wheelDiameter>
       <torque>4</torque>
       <commandTopic>cmd_vel</commandTopic>
-      <odometryTopic>odom_wheel</odometryTopic>
-      <odometryFrame>odom_wheel</odometryFrame>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
       <robotBaseFrame>base_footprint</robotBaseFrame>
       <broadcastTF>0</broadcastTF>
       <covariance_x>0.0001</covariance_x>
@@ -162,7 +162,7 @@
       <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
         <topicName>imu</topicName>
         <bodyName>imu_link</bodyName>
-        <updateRateHZ>10.0</updateRateHZ>
+        <updateRateHZ>30.0</updateRateHZ>
         <gaussianNoise>0.0</gaussianNoise>
         <xyzOffset>0 0 0</xyzOffset>
         <rpyOffset>0 0 0</rpyOffset>
