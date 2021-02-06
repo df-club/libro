@@ -8,5 +8,6 @@
             <param name="vo_used" value="false"/>
             <param name="debug" value="true"/>
             <param name="self_diagnose" value="false"/>
+            <remap from="imu_data" to="imu" />
         </node>
 </launch>
