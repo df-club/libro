@@ -117,24 +117,21 @@
   </gazebo>
   <!-- camera -->
   <gazebo reference="camera_link">
-    <sensor type="camera" name="camera1">
+    <sensor type="camera" name="front_cam">
       <update_rate>30.0</update_rate>
       <camera name="head">
         <horizontal_fov>1.3962634</horizontal_fov>
         <image>
-          <width>800</width>
-          <height>800</height>
+          <width>640</width>
+          <height>480</height>
           <format>R8G8B8</format>
         </image>
         <clip>
-          <near>0.02</near>
+          <near>0.01</near>
           <far>300</far>
         </clip>
         <noise>
           <type>gaussian</type>
-          <!-- Noise is sampled independently per pixel on each frame.
-                   That pixel's noise value is added to each of its color
-                   channels, which at that point lie in the range [0,1]. -->
           <mean>0.0</mean>
           <stddev>0.007</stddev>
         </noise>
@@ -142,7 +139,7 @@
       <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
         <alwaysOn>true</alwaysOn>
         <updateRate>0.0</updateRate>
-        <cameraName>rrbot/camera1</cameraName>
+        <cameraName>front_cam</cameraName>
         <imageTopicName>image_raw</imageTopicName>
         <cameraInfoTopicName>camera_info</cameraInfoTopicName>
         <frameName>camera_link</frameName>
@@ -155,7 +152,6 @@
       </plugin>
     </sensor>
   </gazebo>
-  <!-- Add IMU plugin -->
   <gazebo reference="imu_link">
     <gravity>true</gravity>
     <sensor name="imu_sensor" type="imu">
@@ -164,9 +160,9 @@
       <visualize>true</visualize>
       <topic>__default_topic__</topic>
       <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
-        <topicName>imu_data</topicName>
+        <topicName>imu</topicName>
         <bodyName>imu_link</bodyName>
-        <updateRateHZ>100.0</updateRateHZ>
+        <updateRateHZ>10.0</updateRateHZ>
         <gaussianNoise>0.0</gaussianNoise>
         <xyzOffset>0 0 0</xyzOffset>
         <rpyOffset>0 0 0</rpyOffset>

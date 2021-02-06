@@ -28,7 +28,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/urdf/meshes/base_link.STL" />
+        <mesh filename="package://libro_model/meshes/base_link.STL" />
       </geometry>
       <material name="">
         <color rgba="1 1 1 1" />
@@ -37,7 +37,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/urdf/meshes/base_link.STL" />
+        <mesh filename="package://libro_model/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -50,7 +50,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/urdf/meshes/right_front_wheel_link.STL" />
+        <mesh filename="package://libro_model/meshes/right_front_wheel_link.STL" />
       </geometry>
       <material name="">
         <color rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
@@ -59,7 +59,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/urdf/meshes/right_front_wheel_link.STL" />
+        <mesh filename="package://libro_model/meshes/right_front_wheel_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -79,7 +79,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/urdf/meshes/right_rear_wheel_link.STL" />
+        <mesh filename="package://libro_model/meshes/right_rear_wheel_link.STL" />
       </geometry>
       <material name="">
         <color rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
@@ -88,7 +88,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/urdf/meshes/right_rear_wheel_link.STL" />
+        <mesh filename="package://libro_model/meshes/right_rear_wheel_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -108,7 +108,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/urdf/meshes/left_front_wheel_link.STL" />
+        <mesh filename="package://libro_model/meshes/left_front_wheel_link.STL" />
       </geometry>
       <material name="">
         <color rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
@@ -117,7 +117,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/urdf/meshes/left_front_wheel_link.STL" />
+        <mesh filename="package://libro_model/meshes/left_front_wheel_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -137,7 +137,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/urdf/meshes/left_rear_wheel_link.STL" />
+        <mesh filename="package://libro_model/meshes/left_rear_wheel_link.STL" />
       </geometry>
       <material name="">
         <color rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
@@ -146,7 +146,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/urdf/meshes/left_rear_wheel_link.STL" />
+        <mesh filename="package://libro_model/meshes/left_rear_wheel_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -166,7 +166,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/urdf/meshes/ydlidar_link.STL" />
+        <mesh filename="package://libro_model/meshes/ydlidar_link.STL" />
       </geometry>
       <material name="">
         <color rgba="0.772549019607843 0.752941176470588 0.733333333333333 1" />
@@ -175,7 +175,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/urdf/meshes/ydlidar_link.STL" />
+        <mesh filename="package://libro_model/meshes/ydlidar_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -194,7 +194,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/urdf/meshes/lidar_underframe_link.STL" />
+        <mesh filename="package://libro_model/meshes/lidar_underframe_link.STL" />
       </geometry>
       <material name="">
         <color rgba="1 1 1 1" />
@@ -203,7 +203,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/urdf/meshes/lidar_underframe_link.STL" />
+        <mesh filename="package://libro_model/meshes/lidar_underframe_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -223,7 +223,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/urdf/meshes/camera_link.STL" />
+        <mesh filename="package://libro_model/meshes/camera_link.STL" />
       </geometry>
       <material name="">
         <color rgba="1 1 1 1" />
@@ -232,7 +232,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://libro_model/urdf/meshes/camera_link.STL" />
+        <mesh filename="package://libro_model/meshes/camera_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -242,17 +242,57 @@
     <child link="camera_link" />
     <axis xyz="0 1 0" />
   </joint>
-  <link name="imu_link">
+    <link
+    name="imu_link">
+    <inertial>
+      <origin
+        xyz="1.38777878078145E-17 -1.76569405348702E-20 0.000480459453048733"
+        rpy="0 0 0" />
+      <mass
+        value="0.00505378695593601" />
+      <inertia
+        ixx="1.40522552943832E-07"
+        ixy="2.7306391434977E-40"
+        ixz="-2.54746894131233E-40"
+        iyy="1.40522552943832E-07"
+        iyz="-1.06659580591594E-25"
+        izz="2.51063192322412E-07" />
+    </inertial>
     <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
       <geometry>
-        <box size="0.01 0.01 0.01"/>
+        <mesh
+          filename="package://libro_model/meshes/imu_link.STL" />
       </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
     </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://libro_model/meshes/imu_link.STL" />
+      </geometry>
+    </collision>
   </link>
-  <joint name="imu_joint" type="fixed">
-    <origin xyz="0 0 0.01" rpy="0 0 0" />
-    <parent link="libro_chassis_link" />
-    <child link="imu_link" />
-    <axis xyz="0 0 0" />
+  <joint
+    name="imu_joint"
+    type="fixed">
+    <origin
+      xyz="0.099307 -1.2058E-05 -0.0305"
+      rpy="0 0 0" />
+    <parent
+      link="libro_chassis_link" />
+    <child
+      link="imu_link" />
+    <axis
+      xyz="0 0 1" />
   </joint>
 </robot>
