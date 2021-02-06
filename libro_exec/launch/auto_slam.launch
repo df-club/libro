@@ -2,6 +2,7 @@
     <include file="$(find libro_model)/launch/libro_model_started.launch" />
     <include file="$(find libro_sim)/launch/library_sim.launch" />
     <include file="$(find libro_gmapping)/launch/gmapping.launch" />
+    <include file="$(find libro_amcl)/launch/libro_explore_amcl.launch" />
     <include file="$(find libro_move_base)/launch/libro_explore_move_base.launch"/>
     <include file="$(find libro_explore)/launch/libro_explore.launch"/>
 

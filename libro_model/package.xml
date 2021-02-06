@@ -26,8 +26,7 @@ for libro_model robot</p>
   <depend>urdf</depend>
   <depend>xacro</depend>
   <depend>explore_lite</depend>
-  <depend>robot_pose_ekf</depend>
-
+  <depend>robot-pose-ekf</depend>
   <export>
   </export>
 

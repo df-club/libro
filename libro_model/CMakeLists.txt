@@ -13,7 +13,6 @@ find_package(catkin REQUIRED COMPONENTS
 	gmapping
 	dwa_local_planner
 	explore_lite
-	robot_pose_ekf
 )
 
 catkin_package(
