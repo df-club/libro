@@ -15,14 +15,17 @@
 
         ros.on('connection', function () {
             $("#status span").text("Connected to websocket server.");
+            $("#status span").css({ "color": "#00ff00" });
         });
 
         ros.on('error', function (error) {
             $("#status span").text("Error connecting to websocket server:" + error);
+            $("#status span").css({ "color": "#ff0000" });
         });
 
         ros.on('close', function () {
             $("#status span").text("Connection to websocket server closed.");
+            $("#status span").css({ "color": "#ff0000" });
         });
 
         var speed = 0.2;
@@ -57,6 +60,36 @@
         function pubBack() {
             x = -1;
             th = 0;
+            pubTwist();
+        }
+        function pubLeft() {
+            x = 0;
+            th = 1;
+            pubTwist();
+        }
+        function pubRight() {
+            x = 0;
+            th = -1;
+            pubTwist();
+        }
+        function pubForwardLeft() {
+            x = 1;
+            th = 1;
+            pubTwist();
+        }
+        function pubForwardRight() {
+            x = 1;
+            th = -1;
+            pubTwist();
+        }
+        function pubBackLeft(){
+            x=-1;
+            th=-1;
+            pubTwist();
+        }
+        function pubBackRight(){
+            x=-1;
+            th=1;
             pubTwist();
         }
         function pubTwist() {
@@ -96,18 +129,58 @@
             });
             cmdVel.publish(twist);
         }
+        
         window.forwardTime;
         window.backTime;
+        window.leftTime;
+        window.rightTime;
+        window.forwardLeftTime;
+        window.forwardRightTime;
+        window.backLeftTime;
+        window.backRightTime;
+
+        function clearAllTimer(){
+            window.clearInterval(window.forwardTime);
+                window.clearInterval(window.backTime);
+                window.clearInterval(window.leftTime);
+                window.clearInterval(window.rightTime);
+                window.clearInterval(window.forwardLeftTime);
+                window.clearInterval(window.forwardRightTime);
+                window.clearInterval(window.backLeftTime);
+                window.clearInterval(window.backRightTime);
+        }
         $(document).ready(function () {
             $("#forward_btn").on("mousedown", function () {
-                window.clearInterval(window.forwardTime);
-                window.clearInterval(window.backTime);
+                clearAllTimer();
                 window.forwardTime = window.setInterval(pubForward, 100);
             });
             $("#back_btn").on("mousedown", function () {
-                window.clearInterval(window.forwardTime);
-                window.clearInterval(window.backTime);
+                clearAllTimer();
                 window.backTime = window.setInterval(pubBack, 100);
+            });
+            $("#left_btn").on("mousedown", function () {
+                clearAllTimer();
+                window.leftTime = window.setInterval(pubLeft, 100);
+            });
+            $("#right_btn").on("mousedown", function () {
+                clearAllTimer();
+                window.rightTime = window.setInterval(pubRight, 100);
+            });
+            $("#forwardLeft_btn").on("mousedown", function () {
+                clearAllTimer();
+                window.forwardLeftTime = window.setInterval(pubForwardLeft, 100);
+            });
+            $("#forwardRight_btn").on("mousedown", function () {
+                clearAllTimer();
+                window.forwardRightTime = window.setInterval(pubForwardRight, 100);
+            });
+            $("#backLeft_btn").on("mousedown", function () {
+                clearAllTimer();
+                window.backLeftTime = window.setInterval(pubBackLeft, 100);
+            });
+            $("#backRight_btn").on("mousedown", function () {
+                clearAllTimer();
+                window.backRightTime = window.setInterval(pubBackRight, 100);
             });
         });
     </script>
@@ -117,6 +190,15 @@
     <div id="status"><span></span></div>
     <button id="forward_btn" onmouseup="window.clearInterval(window.forwardTime);pubStopSmoothly();">Forward</button>
     <button id="back_btn" onmouseup="window.clearInterval(window.backTime);pubStopSmoothly();">Back</button>
+    <button id="left_btn" onmouseup="window.clearInterval(window.leftTime);pubStopSmoothly();">Left</button>
+    <button id="right_btn" onmouseup="window.clearInterval(window.rightTime);pubStopSmoothly();">Right</button>
+    <button id="forwardLeft_btn"
+        onmouseup="window.clearInterval(window.forwardLeftTime);pubStopSmoothly();">Forward-Left</button>
+    <button id="forwardRight_btn"
+        onmouseup="window.clearInterval(window.forwardRightTime);pubStopSmoothly();">Forward-Right</button>
+    <button id="backLeft_btn"onmouseup="window.clearInterval(window.backLeftTime);pubStopSmoothly();">Back-Left</button>
+    <button id="backRight_btn"onmouseup="window.clearInterval(window.backRightTime);pubStopSmoothly();">Back-Right</button>
+<button id="stop_btn" onmousedown="clearAllTimer();pubStopSmoothly();">Stop</button>
 </body>
 
 </html>
