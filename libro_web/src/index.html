@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+    <script type="text/javascript" src="./js/eventemitter2.min.js"></script>
+    <script type="text/javascript" src="./js/roslib.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>
+
+    <script type="text/javascript" type="text/javascript">
+        var ros = new ROSLIB.Ros({
+            url: 'ws://localhost:9090'
+        });
+
+        ros.on('connection', function () {
+            $("#status span").text("Connected to websocket server.");
+        });
+
+        ros.on('error', function (error) {
+            $("#status span").text("Error connecting to websocket server:" + error);
+        });
+
+        ros.on('close', function () {
+            $("#status span").text("Connection to websocket server closed.");
+        });
+
+        var speed = 0.2;
+        var turn = 1;
+        var cmdVel = new ROSLIB.Topic({
+            ros: ros,
+            name: '/cmd_vel',
+            messageType: 'geometry_msgs/Twist'
+        });
+        var x = 0;
+        var th = 0;
+        var status = 0;
+        var count = 0;
+        var acc = 0.1;
+        var target_speed = 0;
+        var target_turn = 0;
+        var control_speed = 0;
+        var control_turn = 0;
+
+        function pubStopSmoothly() {
+            x = 0;
+            th = 0;
+            control_speed = 0;
+            control_turn = 0;
+            pubTwist();
+        }
+        function pubForward() {
+            x = 1;
+            th = 0;
+            pubTwist();
+        }
+        function pubBack() {
+            x = -1;
+            th = 0;
+            pubTwist();
+        }
+        function pubTwist() {
+            target_speed = speed * x;
+            target_turn = turn * th;
+            if (target_speed > control_speed) {
+                control_speed = Math.min(target_speed, control_speed + 0.02);
+            }
+            if (target_speed < control_speed) {
+                control_speed = Math.max(target_speed, control_speed - 0.02);
+            }
+            if (target_speed == control_speed) {
+                control_speed = target_speed;
+            }
+
+
+            if (target_turn > control_turn) {
+                control_turn = Math.min(target_turn, control_turn + 0.1);
+            }
+            if (target_turn < control_turn) {
+                control_turn = Math.max(target_turn, control_turn - 0.1);
+            }
+            if (target_turn == control_turn) {
+                control_turn = target_turn;
+            }
+            var twist = new ROSLIB.Message({
+                linear: {
+                    x: control_speed,
+                    y: 0,
+                    z: 0
+                },
+                angular: {
+                    x: 0,
+                    y: 0,
+                    z: control_turn
+                }
+            });
+            cmdVel.publish(twist);
+        }
+        window.forwardTime;
+        window.backTime;
+        $(document).ready(function () {
+            $("#forward_btn").on("mousedown", function () {
+                window.clearInterval(window.forwardTime);
+                window.clearInterval(window.backTime);
+                window.forwardTime = window.setInterval(pubForward, 100);
+            });
+            $("#back_btn").on("mousedown", function () {
+                window.clearInterval(window.forwardTime);
+                window.clearInterval(window.backTime);
+                window.backTime = window.setInterval(pubBack, 100);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="status"><span></span></div>
+    <button id="forward_btn" onmouseup="window.clearInterval(window.forwardTime);pubStopSmoothly();">Forward</button>
+    <button id="back_btn" onmouseup="window.clearInterval(window.backTime);pubStopSmoothly();">Back</button>
+</body>
+
+</html>

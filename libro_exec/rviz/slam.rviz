@@ -5,10 +5,6 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-<<<<<<< HEAD
-        - /TF1/Frames1
-=======
->>>>>>> ff1d006f1dfbc63666ac09214c9235b22ebc4825
       Splitter Ratio: 0.36023053526878357
     Tree Height: 614
   - Class: rviz/Selection
@@ -216,70 +212,15 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
-<<<<<<< HEAD
-        base_footprint:
-          Value: true
-        base_link:
-          Value: false
-        camera_link:
-          Value: false
-        imu_link:
-          Value: false
-        left_front_wheel_link:
-          Value: false
-        left_rear_wheel_link:
-          Value: false
-        libro_chassis_link:
-          Value: false
-        lidar_underframe_link:
-          Value: false
-        map:
-          Value: true
-        odom_combined:
-          Value: true
-        right_front_wheel_link:
-          Value: false
-        right_rear_wheel_link:
-          Value: false
-        ydlidar_link:
-          Value: false
-=======
->>>>>>> ff1d006f1dfbc63666ac09214c9235b22ebc4825
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-<<<<<<< HEAD
-        map:
-          odom_combined:
-            base_footprint:
-              base_link:
-                libro_chassis_link:
-                  camera_link:
-                    {}
-                  imu_link:
-                    {}
-                  left_front_wheel_link:
-                    {}
-                  left_rear_wheel_link:
-                    {}
-                  lidar_underframe_link:
-                    {}
-                  right_front_wheel_link:
-                    {}
-                  right_rear_wheel_link:
-                    {}
-                  ydlidar_link:
-                    {}
-      Update Interval: 0
-      Value: true
-=======
         {}
       Update Interval: 0
       Value: false
->>>>>>> ff1d006f1dfbc63666ac09214c9235b22ebc4825
     - Alpha: 1
       Class: rviz_plugin_tutorials/Imu
       Color: 204; 51; 204
