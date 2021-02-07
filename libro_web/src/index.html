@@ -1,63 +1,45 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="utf-8" />
+<meta charset="utf-8" />
 
-    <script type="text/javascript" src="./js/include/eventemitter2.min.js"></script>
-    <script type="text/javascript" src="./js/include/roslib.min.js"></script>
-    <script type="text/javascript" src="./js/include/jquery-3.5.1.min.js"></script>
-    <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./style/libro_teleop.css">
+<script type="text/javascript" src="./js/include/easeljs.min.js"></script>
+<script type="text/javascript" src="./js/include/eventemitter2.min.js"></script>
+<script type="text/javascript" src="./js/include/roslib.min.js"></script>
+<script type="text/javascript" src="./js/include/ros2d.min.js"></script>
 
+<script type="text/javascript" type="text/javascript">
+  /**
+   * Setup all visualization elements when the page is loaded.
+   */
+  function init() {
+    // Connect to ROS.
+    var ros = new ROSLIB.Ros({
+      url : 'ws://localhost:9090'
+    });
+
+    // Create the main viewer.
+    var viewer = new ROS2D.Viewer({
+      divID : 'map',
+      width : 600,
+      height : 500
+    });
+
+    // Setup the map client.
+    var gridClient = new ROS2D.OccupancyGridClient({
+      ros : ros,
+      rootObject : viewer.scene
+    });
+    // Scale the canvas to fit to the map
+    gridClient.on('change', function(){
+      viewer.scaleToDimensions(gridClient.currentGrid.width, gridClient.currentGrid.height);
+    });
+  }
+</script>
 </head>
 
-<body>
-    <div id="status"><span></span></div>
-    <div id="vel_status"><span></span></div>
-    <div class="direction">
-        <button style="grid-area: btn-f;" id="forward_btn"
-            onmouseup="window.clearInterval(window.forwardTime);pubStopSmoothly();"> <i
-                class="fa fa-angle-up fa-2x"></i></button>
-        <button style="grid-area: btn-b;" id="back_btn"
-            onmouseup="window.clearInterval(window.backTime);pubStopSmoothly();"> <i
-                class="fa fa-angle-down fa-2x"></i></button>
-        <button style="grid-area: btn-l;" id="left_btn"
-            onmouseup="window.clearInterval(window.leftTime);pubStopSmoothly();"> <i
-                class="fa fa-angle-left fa-2x"></i></button>
-        <button style="grid-area: btn-r;" id="right_btn"
-            onmouseup="window.clearInterval(window.rightTime);pubStopSmoothly();"> <i
-                class="fa fa-angle-right fa-2x"></i></button>
-        <button style="grid-area: btn-fl;" id="forwardLeft_btn"
-            onmouseup="window.clearInterval(window.forwardLeftTime);pubStopSmoothly();"> <i
-                class="fa fa-angle-double-up fa-2x"></i></button>
-        <button style="grid-area: btn-fr;" id="forwardRight_btn"
-            onmouseup="window.clearInterval(window.forwardRightTime);pubStopSmoothly();"> <i
-                class="fa fa-angle-double-up fa-2x"></i></button>
-        <button style="grid-area: btn-bl;" id="backLeft_btn"
-            onmouseup="window.clearInterval(window.backLeftTime);pubStopSmoothly();"> <i
-                class="fa fa-angle-double-down fa-2x"></i></button>
-        <button style="grid-area: btn-br;" id="backRight_btn"
-            onmouseup="window.clearInterval(window.backRightTime);pubStopSmoothly();"> <i
-                class="fa fa-angle-double-down fa-2x"></i></button>
-        <button style="grid-area: btn-stop;" id="stop_btn" onmousedown="clearAllTimer();pubStopSmoothly();"><i
-                class="fa fa-stop"></i></button>
-    </div>
-    <div class="ctr_box">
-        <i class="fa fa-arrows-h"> Linear Speed</i>
-        <div class="counter speed_x">
-            <button class="speed_subtract">-</button>
-            <input type="text" value="0.1" />
-            <button class="speed_add">+</button>
-        </div>
-        <i class="fa fa-location-arrow"> Angle Speed</i>
-        <div class="counter theta">
-            <button class="th_subtract">-</button>
-            <input type="text" value="1" />
-            <button class="th_add">+</button>
-        </div>
-    </div>
+<body onload="init()">
+  <h1>Simple Map Example</h1>
+  <div id="map"></div>
 </body>
-<script type="text/javascript" src="./js/libro_teleop.js"></script>
-
 </html>

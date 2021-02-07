@@ -70,11 +70,11 @@ $('.speed_add').on("click", function (e) {
     $('.speed_x input').val(changeTwoDecimal_f(speed));
 });
 $('.speed_x input').on("change", function (e) {
-    if(isNum(parseFloat(e.target.value)) && parseFloat(e.target.value) >= 0.1){
-            speed = parseFloat(e.target.value);
-            $('.speed_x input').val(changeTwoDecimal_f(speed));
+    if (isNum(parseFloat(e.target.value)) && parseFloat(e.target.value) >= 0.1) {
+        speed = parseFloat(e.target.value);
+        $('.speed_x input').val(changeTwoDecimal_f(speed));
     }
-    else{
+    else {
         $('.speed_x input').val(changeTwoDecimal_f(speed));
     }
 });
@@ -91,21 +91,36 @@ $('.th_add').on("click", function (e) {
     $('.theta input').val(changeTwoDecimal_f(turn));
 });
 $('.theta input').on("change", function (e) {
-    if(isNum(parseFloat(e.target.value)) && parseFloat(e.target.value) >= 0.1){
-            turn = parseFloat(e.target.value);
-            $('.theta input').val(changeTwoDecimal_f(turn));
+    if (isNum(parseFloat(e.target.value)) && parseFloat(e.target.value) >= 0.1) {
+        turn = parseFloat(e.target.value);
+        $('.theta input').val(changeTwoDecimal_f(turn));
     }
-    else{
+    else {
         $('.theta input').val(changeTwoDecimal_f(turn));
     }
 });
 
-function pubStopSmoothly() {
+function pubStop() {
     x = 0;
     th = 0;
-    control_speed = 0;
     control_turn = 0;
+    control_speed = 0;
     pubTwist();
+}
+
+function pubStopSmoothly() {
+    window.stopTimer = window.setInterval(function () {
+        if (control_speed != 0 || control_turn != 0) {
+            x = 0;
+            th = 0;
+            pubTwist();
+        }
+        else {
+            pubStop();
+            window.clearInterval(window.stopTimer);
+        }
+    }, 50);
+
 }
 function pubForward() {
     x = 1;
@@ -153,23 +168,27 @@ function pubTwist() {
     if (target_speed > control_speed) {
         control_speed = Math.min(target_speed, control_speed + 0.02);
     }
-    if (target_speed < control_speed) {
-        control_speed = Math.max(target_speed, control_speed - 0.02);
+    else {
+        if (target_speed < control_speed) {
+            control_speed = Math.max(target_speed, control_speed - 0.02);
+        } else {
+            control_speed = target_speed;
+        }
     }
-    if (target_speed == control_speed) {
-        control_speed = target_speed;
-    }
+
 
 
     if (target_turn > control_turn) {
         control_turn = Math.min(target_turn, control_turn + 0.1);
+    } else {
+        if (target_turn < control_turn) {
+            control_turn = Math.max(target_turn, control_turn - 0.1);
+        }
+        else {
+            control_turn = target_turn;
+        }
     }
-    if (target_turn < control_turn) {
-        control_turn = Math.max(target_turn, control_turn - 0.1);
-    }
-    if (target_turn == control_turn) {
-        control_turn = target_turn;
-    }
+
     var twist = new ROSLIB.Message({
         linear: {
             x: control_speed,
