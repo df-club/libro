@@ -1,3 +1,15 @@
+2021/2/7 添加前进和后退的web界面 by OscarXsb
+版本说明：
+	1.可以在浏览器界面控制机器人前进和后退
+使用说明：
+	1.安装依赖：
+		sudo apt-get install ros-melodic-rosbridge-suite
+	2.运行 rosbridge
+		roslaunch rosbridge_server rosbridge_websocket.launch
+	3.运行 libro_web pkg src文件夹下的index.html文件
+
+/*************************************************************************/
+
 2021/2/6 修正了地图信息和一些warning by john1217
 版本说明：
 	1.auto_slam有可能会有一些点走不到，建图时考虑手动控制把地图补全

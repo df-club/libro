@@ -1,0 +1,109 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #eeeeee;
+}
+
+.status {
+    color: rgba(0, 200, 0, 1);
+}
+
+.direction {
+    --button-width: 80px;
+    --button-height: 80px;
+
+    display: grid;
+    grid-template-areas: "btn-fl btn-f btn-fr"
+        "btn-l btn-stop btn-r"
+        "btn-bl btn-b btn-br";
+    grid-template-columns: repeat(3, var(--button-width));
+    grid-template-rows: repeat(3, var(--button-height));
+    padding: 24px;
+    border-radius: 20px;
+}
+
+.direction button {
+    margin: 8px;
+    padding: 0;
+    display: block;
+    outline: none;
+    border-radius: calc(var(--button-height));
+    color: #999;
+    font-size: 24px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    border: none;
+    background: linear-gradient(135deg, rgba(230, 230, 230, 1) 0%, rgba(246, 246, 246, 1) 100%);
+    box-shadow: -4px -4px 10px -8px rgba(255, 255, 255, 1),
+        4px 4px 10px -8px rgba(0, 0, 0, .3);
+}
+
+.direction button:active {
+    box-shadow: -4px -4px 10px -8px rgba(255, 255, 255, 1) inset,
+        4px 4px 10px -8px rgba(0, 0, 0, .3) inset;
+}
+
+#forwardLeft_btn {
+    transform: rotate(-45deg);
+}
+
+#forwardRight_btn {
+    transform: rotate(45deg);
+}
+
+#backLeft_btn {
+    transform: rotate(45deg);
+}
+
+#backRight_btn {
+    transform: rotate(-45deg);
+}
+.ctr_box{
+    width: 180px;
+    font-size: 24px;
+    font-weight: normal;
+    font-family: Helvetica, Arial, sans-serif;
+    color:#999;
+}
+.counter {
+    display: inline-flex;
+    border: 3px solid #bbb;
+    border-radius: 20px;
+    background-color: #bbb;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, .18);
+    margin: 10px;
+}
+
+.counter button {
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 24px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    display: inline-block;
+}
+
+.counter input[type="text"] {
+    height: 32px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    display: inline-block;
+    appearance: none;
+    width: 60px;
+    text-align: center;
+    font-size: 22px;
+    border-radius: 2px;
+}
+#status{
+    font-size: 24px;
+    font-family: Helvetica, Arial, sans-serif;
+}
