@@ -1,3 +1,13 @@
+2021/2/8 添加通过程序设定导航目标 by john1217
+版本说明：
+	1.在libro_controller包中添加libro_setgoal.py用于设定导航目标
+	2.可将sql语句写入libro_setgoal.py程序中实现通过数据库调用位姿信息
+使用方法不变
+	1.开启导航：roslaunch libro_exec navigation.launch
+	2.调用程序：rosrun libro_controller libro_setgoal.py 
+
+/*************************************************************************/
+
 2021/2/7 添加前进和后退的web界面 by OscarXsb
 版本说明：
 	1.可以在浏览器界面控制机器人前进和后退
