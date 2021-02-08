@@ -222,6 +222,7 @@ function clearAllTimer() {
     window.clearInterval(window.forwardRightTime);
     window.clearInterval(window.backLeftTime);
     window.clearInterval(window.backRightTime);
+    window.clearInterval(window.stopTimer);
 }
 $(document).ready(function () {
     $("#forward_btn").on("mousedown", function () {
