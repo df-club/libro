@@ -42,18 +42,3 @@ def movebase_client(inputX,inputY):
     else:
         # Result of executing the action
         return client.get_result()
-
-
-# If the python node is executed as main process (sourced directly)
-if __name__ == '__main__':
-    try:
-       # Initializes a rospy node to let the SimpleActionClient publish and subscribe
-       
-        rospy.init_node('libro_setgoal')
-        argx = float(sys.argv[1])
-        argy = float(sys.argv[2])
-        result = movebase_client(argx,argy)
-        if result:
-            rospy.loginfo("Goal execution done!")
-    except rospy.ROSInterruptException:
-        rospy.loginfo("Navigation test finished.")
