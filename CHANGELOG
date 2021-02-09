@@ -10,6 +10,22 @@
 
 /*************************************************************************/
 
+2021/2/9 改进了设置目标的方式 by OscarXsb
+版本说明：
+	1.在libro_controller的src目录下添加include文件夹，内含引用的libro_setgoal.py库文件
+	2.添加find_bookcase.py，用于到达指定书架，但是没有设置逻辑
+	3.需要注意的是src文件夹与include文件夹下的libro_setgoal.py文件的不同点：
+		1.src文件夹下的文件带有主逻辑，即可以直接执行
+		2.include文件夹用作引用，没有主逻辑
+	4.libro_setgoal.py文件中设置需要参数，即x和y值
+使用方法不变
+	1.rosrun libro_controller libro_setgoal.py x y
+		此处的x,y值为要设置的目标点的坐标
+	2.rosrun libro_controller find_bookcase.py
+		已经引入了include文件夹下的libro_setgoal文件，但未设置逻辑
+
+/*************************************************************************/
+
 2021/2/8 添加通过程序设定导航目标 by john1217
 版本说明：
 	1.在libro_controller包中添加libro_setgoal.py用于设定导航目标
