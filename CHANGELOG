@@ -1,3 +1,15 @@
+2021/2/9 添加发送接收bookid信息功能 by john1217
+版本说明：
+	1.创建send_bookid.py作为bookid_srv服务的client端发送，其中可以添加二维码识别程序
+	2.修改libro_setgoal为setgoal_by_bookid，作为bookid_srv服务的server端
+		其接受bookid信息，并通过调用数据库获取位姿信息，发布给move_base导航
+使用方法不变
+	1.开启导航：roslaunch libro_exec navigation.launch
+	2.调用程序：rosrun libro_controller send_bookid.py 
+	3.调用程序：rosrun libro_controller setgoal_by_bookid.py 
+
+/*************************************************************************/
+
 2021/2/8 添加通过程序设定导航目标 by john1217
 版本说明：
 	1.在libro_controller包中添加libro_setgoal.py用于设定导航目标
