@@ -10,5 +10,24 @@
         <include>
             <uri>model://mz_library</uri>
         </include>
+
+        <include>
+            <uri>model://mark_label</uri>
+            <pose>-6 -2 0 0 0 0</pose>
+            <scale>1 1 1</scale>
+        </include>
+
+        <include>
+            <uri>model://mark_label</uri>
+            <pose>-6 0 0 0 0 0</pose>
+            <scale>1 1 1</scale>
+        </include>
+
+        <include>
+            <uri>model://mark_label</uri>
+            <pose>-6 2 0 0 0 0</pose>
+            <scale>1 1 1</scale>
+        </include>
+
     </world>
 </sdf>
