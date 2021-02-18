@@ -17,6 +17,7 @@ LIBRO is short for LIBrary management RObot
 |libro_model|机器人模型及仿真文件|
 |libro_gmapping|提供 gmapping 扫描地图功能|
 |libro_sim|提供在gazebo中libro仿真的环境文件|
+|libro_db|包含图书及位置信息的sqlite的数据库系统|
 |CMakeLists.txt|ROS功能包编译配置文件|
 |package.xml|ROS功能包编译配置文件|
 

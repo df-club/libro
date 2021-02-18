@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import sqlite3
 
 def connectDatabase(dbName="bookID.db"):
@@ -34,7 +37,6 @@ def searchDataByName(cursor,tableName,selectName,content):
 if __name__ == '__main__':
     conn = connectDatabase()
     cursor = createCursor(conn)
-
     for i in searchDataByName(cursor,"bookId","bookName","红岩"):
         print (i)
     closeCursor(cursor)
