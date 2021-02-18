@@ -51,4 +51,5 @@ LIBRO is short for LIBrary management RObot
    - 进入到libro_map文件夹下的map文件夹，输入 sh save_map.sh
 - web控制器：
    - roslaunch rosbridge_server rosbridge_websocket.launch
-	 - 运行 libro_web pkg src文件夹下的index.html文件
+	- 运行 libro_web pkg src文件夹下的index.html文件
+

@@ -6,6 +6,7 @@
 
 ## 数据库结构
 数据库名：bookID.db
+
 表信息：
 - bookId：用于存储书籍的相关信息
 - blockPosition：用于存储书架、块位置等信息
