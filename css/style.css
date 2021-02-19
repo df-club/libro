@@ -78,4 +78,29 @@ header .logo img{
     background-color: #f6efe8;
     width:100%;
     min-height: 700px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.bannerText{
+    order: 1;
+}
+.bannerImg{
+    order: 2;
+}
+.banner h1{
+    font-weight: 600;
+    font-family: 'Jetbrains Mono bold',Georgia, 'Times New Roman', Times, serif;
+    font-size: 3em;
+    text-align: left;
+    display: block;
+    color:#34495e;
+    width: 500px;
+}
+.banner h4{
+    text-transform: uppercase;
+    font-size: 1.4em;
+    color: #34495e;
 }

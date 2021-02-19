@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libro</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/download.css">
 </head>
 
 <body>
@@ -25,19 +27,55 @@
                 <div class="clear"></div>
             </ul>
         </nav>
-        
+
     </header>
     <article>
         <section class="banner">
-            
+            <div class="bannerText">
+                <h4>Libro'role</h4>
+                <h1>Make managing the LIBrary more easily with our RObot</h1>
+            </div>
+            <div class="bannerImg">
+                <img src="./img/library.svg" alt="Library" height="500px">
+            </div>
         </section>
         <section class="download">
-            <h1><span>--Download--</span><br>Source Code</h1>
-            <div class="content">
-                <ul>
-                    <li>Stable</li>
-                    <li>Latest</li>
-                </ul>
+            <div class="downTitle">
+                <br>
+                <h1><span>Download</span></h1>
+                <h3>You can download our source code here.</h3>
+            </div>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="sliderText">
+                                <h3>Stable Version</h3>
+                            </div>
+                            <div class="content">
+                                <p>The stable version means that
+                                    it has passed the test on Melodic
+                                    and has been changed greatly,
+                                    so it is relatively stable.</p>
+                                <a href="#">Releases</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="sliderText">
+                                <h3>Latest Version</h3>
+                            </div>
+                            <div class="content">
+                                <p>The latest version means
+                                    which is still develop,
+                                    so it has the lastest function
+                                    ,but may not stable.</p>
+                                <a href="#">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="wiki">
@@ -48,5 +86,24 @@
     </article>
     <footer></footer>
 </body>
+<script src="js/swiper.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+            rotate: 30,
+            stretch: 0,
+            depth: 200,
+            modifier: 1,
+            slideShadows: true,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+        },
+    });
+</script>
 
 </html>
