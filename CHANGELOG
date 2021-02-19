@@ -1,3 +1,16 @@
+2021/2/19 实现通过bookId从数据库检索位姿信息进行导航 by john1217
+版本说明：
+	1.通过bookId从数据库检索位姿信息进行导航，程序libro_db中的send_bookid和setgoal_by_bookid
+	2.更新了数据库中的blockPosition表，将图书馆书架划分为12个，以及每个书架对应的位姿，目前书架没有分块
+	3.更新了数据库中的bookId表，增加了测试用数据
+
+使用方法：
+	1.启动导航：roslaunch libro_exec navigation.launch
+	2.启动bookId导航的服务：rosrun libro_db setgoal_by_bookid.py
+	2.启动发送bookId的客户端：rosrun libro_db send_bookid.py 100， 参数是bookId
+
+/*************************************************************************/
+
 2021/2/18 增加了libro_db功能包 by OscarXsb
 版本说明：
 	1.libro_db中包括bookID.db数据库文件和数据库操作相关代码

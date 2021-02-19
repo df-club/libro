@@ -19,4 +19,4 @@ def setGoal(inX,inY):
         rospy.loginfo("Navigation test finished.")
 
 if __name__ == '__main__':
-    
+    pass

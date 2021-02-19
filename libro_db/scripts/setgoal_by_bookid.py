@@ -4,9 +4,11 @@
 import rospy
 # Brings in the SimpleActionClient
 import actionlib
-from libro_controller.srv import BookID, BookIDResponse
+from libro_db.srv import BookID, BookIDResponse
 # Brings in the .action file and messages used by the move base action
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
+import tf
+from connectBookID import getPosByBookIDFromDB
 
 # 作为bookid_srv的服务的server端获取所发送的bookid
 def setgoal_by_bookid():
@@ -21,7 +23,7 @@ def setgoal_by_bookid():
 # Define the handle function to handle the request inputs
 def handle_function(req):
     # 注意我们是如何调用request请求内容的，与前面client端相似，都是将其认为是一个对象的属性，通过对象调用属性，在我们定义
-    rospy.loginfo('Request bookid %d'%req.bookid)
+    rospy.loginfo('Request bookid %s'%req.bookid)
     if req.bookid <= 0:
         rospy.loginfo('Invalid bookid')
     else:
@@ -29,11 +31,11 @@ def handle_function(req):
         setgoal_client(req.bookid)
     # 返回一个Service_demoResponse实例化对象，其实就是返回一个response的对象，其包含的内容为我们再Service_demo.srv中定义的
     # response部分的内容，我们定义了一个string类型的变量，因此，此处实例化时传入字符串即可
-    return BookIDResponse("Recived bookid %d"%req.bookid)
+    return BookIDResponse("Recived bookid %s"%req.bookid)
 
 # 根据bookid设定导航目标
 def setgoal_client(bookid):
-    rospy.loginfo("Bookid for navigation: %d"%bookid)
+    rospy.loginfo("Bookid for navigation: %s"%bookid)
     # Initializes a rospy node to let the SimpleActionClient publish and subscribe
     # Create an action client called "move_base" with action definition file "MoveBaseAction"
     client = actionlib.SimpleActionClient('move_base', MoveBaseAction)
@@ -47,14 +49,16 @@ def setgoal_client(bookid):
     # position（位置）：x,y,z
     # orientation（方向）：x,y,z,w（四元数）
     # Move 0.5 meters forward along the x axis of the "map" coordinate frame
-    goal.target_pose.pose.position.x = 0.5
-    goal.target_pose.pose.position.y = 0.5
-    goal.target_pose.pose.position.z = 0.0
+    [x, y, z, theta] = getPosByBookIDFromDB(bookid)
+    goal.target_pose.pose.position.x = x
+    goal.target_pose.pose.position.y = y
+    goal.target_pose.pose.position.z = z
     # No rotation of the mobile base frame w.r.t. map frame
-    goal.target_pose.pose.orientation.x = 0.0
-    goal.target_pose.pose.orientation.y = 0.0
-    goal.target_pose.pose.orientation.z = 0.0
-    goal.target_pose.pose.orientation.w = 1.0
+    quat = tf.transformations.quaternion_from_euler(0,0,theta)
+    goal.target_pose.pose.orientation.x = quat[0]
+    goal.target_pose.pose.orientation.y = quat[1]
+    goal.target_pose.pose.orientation.z = quat[2]
+    goal.target_pose.pose.orientation.w = quat[3]
     rospy.loginfo("Navigation goal:")
     rospy.loginfo(goal.target_pose.pose)
     try:

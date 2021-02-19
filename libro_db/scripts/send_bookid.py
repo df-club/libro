@@ -6,9 +6,10 @@
 
 # 加载所需模块
 import rospy
-from libro_controller.srv import BookID
+from libro_db.srv import BookID
+from sys import argv
 
-def send_bookid():
+def send_bookid(bookid):
     rospy.init_node('send_bookid')
     # 等待有可用的服务 "bookid"
     rospy.wait_for_service("bookid_srv")
@@ -16,8 +17,6 @@ def send_bookid():
         # 定义service客户端，service名称为“bookid”，service类型为bookid
         bookid_client = rospy.ServiceProxy("bookid_srv", BookID)
         # 向server端发送请求，发送的request内容为bookid
-        # 这里的bookid是通过二维码识别获取的
-        bookid = 1
         resp = bookid_client.call(bookid)
         # 打印处理结果，注意调用response的方法，类似于从resp对象中调取response属性
         rospy.loginfo("Message From server:%s",resp.feedback)
@@ -26,4 +25,5 @@ def send_bookid():
 
 # 如果单独运行此文件，则将上面函数send_bookid()作为主函数运行
 if __name__=="__main__":
-    send_bookid()
+    bookid = argv[1]
+    send_bookid(bookid)
