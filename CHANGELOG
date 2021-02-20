@@ -1,3 +1,14 @@
+2021/2/19 重写了通过查找书籍数据进行导航的程序接口 by john1217
+版本说明：
+	1.简化程序逻辑，新建findBook.py，通过接收bookId，bookName等参数查找数据库获取书籍的位置信息并导航
+
+使用方法：
+	1.启动导航：roslaunch libro_exec navigation.launch
+	2.通过bookId导航：rosrun libro_db findBook.py -i 100
+   	3.通过bookName导航：rosrun libro_db findBook.py -n 西游记
+
+/*************************************************************************/
+
 2021/2/19 实现通过bookId从数据库检索位姿信息进行导航 by john1217
 版本说明：
 	1.通过bookId从数据库检索位姿信息进行导航，程序libro_db中的send_bookid和setgoal_by_bookid

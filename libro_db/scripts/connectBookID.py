@@ -50,7 +50,8 @@ def getPosByBookIDFromDB(bookid):
     sql = "select * from bookId where bookId='" + bookid + "' AND isBorrowed='false'" 
     results = cursor.execute(sql)
     oneData = results.fetchone()
-    print("bookName: " + oneData[2])
+    print("bookId: " + oneData[1] + ', ' + "bookName: " + oneData[2])
+    print("shelfId: " + oneData[3] + ', ' + "blockId: " + oneData[4])
     sql = "select * from blockPosition where shelfId='" + oneData[3] + "' AND blockId='" + oneData[4] + "'"
     results = cursor.execute(sql)
     oneData = results.fetchone()
@@ -58,6 +59,20 @@ def getPosByBookIDFromDB(bookid):
     closeDatabase(conn)
     return (oneData[3:7])
 
+def getPosByBookNameFromDB(bookname):
+    conn = connectDatabase()
+    cursor = createCursor(conn)
+    sql = "select * from bookId where bookName='" + bookname + "' AND isBorrowed='false'" 
+    results = cursor.execute(sql)
+    oneData = results.fetchone()
+    print("bookId: " + oneData[1] + ', ' + "bookName: " + oneData[2])
+    print("shelfId: " + oneData[3] + ', ' + "blockId: " + oneData[4])
+    sql = "select * from blockPosition where shelfId='" + oneData[3] + "' AND blockId='" + oneData[4] + "'"
+    results = cursor.execute(sql)
+    oneData = results.fetchone()
+    closeCursor(cursor)
+    closeDatabase(conn)
+    return (oneData[3:7])
 
 if __name__ == '__main__':
     conn = connectDatabase()
