@@ -1,0 +1,68 @@
+footer{
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    background: #34495e;
+    color: #fff;
+    padding-top: 30px;
+    min-width: 1200px;
+}
+.main-content{
+    display: flex;
+}
+.main-content .box{
+    flex-basis: 50%;
+    padding: 10px 20px;
+}
+footer .box h2{
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+}
+.footer box .content{
+    margin-top: 20px 0 0 0 ;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.left .content p{
+    text-align: justify;
+    color:#fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    line-height:24px;
+}
+.left .content .social{
+    margin: 20px 0 0 0;
+    margin-bottom: 20px;
+}
+.left .content .social a span{
+    height: 40px;
+    width: 40px;
+    background: #fff;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: .3s;
+    color:#34495e;
+}
+.left .content .social a span:hover{
+    background: #f12020;
+    color: #fff;
+}
+.center .content .text{
+    font-size: 17px;
+    text-align: right;
+    display: block;
+}
+.center .content{
+    margin-bottom: 25px;
+}
+footer .content{
+    margin-top: 15px;
+}
+footer .qrcode{
+    text-align: right;
+    margin-top: 15px;
+}

@@ -42,9 +42,14 @@
     margin:10px 0 0;
     padding:10px 20px;
     text-decoration:none;
-    border:2px solid #262626;
-    color: #262626;
+    border:2px solid #34495e;
+    color: #34495e;
     font-weight: 600;
+    transition: 0.5s;
+}
+.card .content a:hover{
+    color:#fff;
+    background-color: #34495e;
 }
 .card .sliderText{
     position:  relative;
