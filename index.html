@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/swiper.min.css">
     <link rel="stylesheet" href="./css/download.css">
+    <link rel="stylesheet" href="./css/wiki.css">
 </head>
 
 <body>
@@ -32,7 +33,7 @@
     <article>
         <section class="banner">
             <div class="bannerText">
-                <h4>Libro'role</h4>
+                <h4>Libro's  role</h4>
                 <h1>Make managing the LIBrary more easily with our RObot</h1>
             </div>
             <div class="bannerImg">
@@ -79,31 +80,42 @@
             </div>
         </section>
         <section class="wiki">
-            <h1><span>--WIKI--</span><br>How to use</h1>
-            <div class="content">
+            <h1>LIBRO <span>WIKI</span></h1>
+            <div class="container">
+                <a href="#">
+                <div class="box">
+                    <h2>01</h2>
+                    <h3>Get Started</h3>
+                    <p>Check out how to configure 
+                        Libro's environment 
+                        and its dependencies. 
+                        This article will show you
+                         how to get start.</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="box">
+                    <h2>02</h2>
+                    <h3>How To Use</h3>
+                    <p>These articles on Libro wiki 
+                        will show you how to use 
+                        all the functions of Libro.</p>
+                </div></a>
+                <a href="#">
+                <div class="box">
+                    <h2>03</h2>
+                    <h3>How Libro Work</h3>
+                    <p>These Libro wiki articles
+                         describe how Libro works 
+                         so that you can change it, 
+                         such as adding more features to it.</p>
+                </div>
+            </a>
             </div>
         </section>
     </article>
     <footer></footer>
 </body>
 <script src="js/swiper.min.js"></script>
-<script>
-    var swiper = new Swiper('.swiper-container', {
-        effect: 'coverflow',
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: 'auto',
-        coverflowEffect: {
-            rotate: 30,
-            stretch: 0,
-            depth: 200,
-            modifier: 1,
-            slideShadows: true,
-        },
-        pagination: {
-            el: '.swiper-pagination',
-        },
-    });
-</script>
-
+<script src="js/downloadCard.js"></script>
 </html>

@@ -6,7 +6,6 @@
 }
 body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    overflow-x: hidden;
 }
 h1,h2,h3,h4,h5,h6{
     font-weight: normal;
@@ -84,6 +83,7 @@ header .logo img{
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
+    min-width: 1200px;
 }
 .bannerText{
     order: 1;
