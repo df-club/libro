@@ -1,3 +1,44 @@
+2021/2/26 添加了web寻书端 by OscarXsb
+版本说明：
+	1.添加了寻找书籍web版本，调用findBook.py
+使用方法：
+	1.安装 apache2
+		sudo apt-get install apache2
+	测试：浏览器访问 http://localhost
+		查看状态： service apache2 status/start/stop/restart
+		Web目录： /var/www
+		安装目录： /etc/apache2/
+		全局配置： /etc/apache2/apache2.conf
+		监听端口： /etc/apache2/ports.conf
+		虚拟主机： /etc/apache2/sites-enabled/000-default.conf
+	2.安装 php
+		sudo apt-get install php
+	3.sudo apt-get install libapache2-mod-php
+	4.重启服务
+		service apache2 restart
+	5.测试 php
+		vim /var/www/html/phpinfo.php
+		文件内容：
+			<?php echo phpinfo();?>
+		浏览器访问：http://localhost/phpinfo.php
+	6.改配置
+		更改/etc/php/7.2/apache2下的php.ini,搜索sqlite，将这句前面分号去掉：
+			extension=sqlite3
+		更改/etc/apache2/apache2.conf
+			搜索 /var/www/，这一部分改成
+				<Directory /home/ros/libro_ws/src>
+					Options Indexes FollowSymLinks
+					AllowOverride None
+					Require all granted
+				</Directory>
+			请注意，这里的ros是我的用户名，libro_ws是libro的工作空间名
+	7.重启 apache
+		service apache2 restart
+	8.测试
+		打开 http://localhost/libro_web/database/index.php，
+		在对应书籍后面点击get it即可获得书籍，此处调用findBook.py
+	*之前的键盘控制可以通过
+		http://localhost/libro_web/src/teleop.html 打开
 2021/2/19 重写了通过查找书籍数据进行导航的程序接口 by john1217
 版本说明：
 	1.简化程序逻辑，新建findBook.py，通过接收bookId，bookName等参数查找数据库获取书籍的位置信息并导航
